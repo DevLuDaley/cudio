@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_17_192309) do
+ActiveRecord::Schema.define(version: 2019_05_17_200415) do
+
+  create_table "artists", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "engineers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,6 +29,26 @@ ActiveRecord::Schema.define(version: 2019_05_17_192309) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_engineers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_engineers_on_reset_password_token", unique: true
+  end
+
+  create_table "studios", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "zats", force: :cascade do |t|
+    t.datetime "appointment_date"
+    t.boolean "status", default: false
+    t.integer "studio_id"
+    t.integer "engineer_id"
+    t.integer "artist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_zats_on_artist_id"
+    t.index ["engineer_id"], name: "index_zats_on_engineer_id"
+    t.index ["studio_id"], name: "index_zats_on_studio_id"
   end
 
 end
