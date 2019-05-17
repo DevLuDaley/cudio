@@ -10,10 +10,10 @@ class Engineer < ApplicationRecord
   #devise :omniauthable
 
 
-   has_many :rec_sessions #adds methods to my model
+   has_many :zats #adds methods to my model
          #adds methods to my model
-          has_many :artists, through: :rec_sessions
-          has_many :studios, through: :rec_sessions
+          has_many :artists, through: :zats
+          has_many :studios, through: :zats
           #has_many :artists through :sessions
           #has_many :studios through :sessions
 
