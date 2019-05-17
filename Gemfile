@@ -6,7 +6,10 @@ ruby '2.6.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 
+
 gem 'devise'
+
+gem 'omniauth-github'
 
 gem 'database_cleaner'
 
