@@ -6,7 +6,7 @@ class Engineer < ApplicationRecord
   devise :database_authenticatable, :registerable,
 #:recoverable, :rememberable, :validatable
 #devise :database_authenticatable, :registerable, 
-:recoverable, :rememberable, :trackable, :validatable #, :omniauthable
+:recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:github]
   #devise :omniauthable
 
 
@@ -20,5 +20,18 @@ class Engineer < ApplicationRecord
     #validates :name, presence => true
     #use_this=> validates :name, presence: true, length: { minimum: 2 }
     #use_this=>validates :name, uniqueness: true
+
+
+    def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |engineer|
+      engineer.provider = auth.provider
+      engineer.name = auth.name
+      engineer.uid = auth.uid
+      engineer.email = auth.info.email
+      engineer.password = Devise.friendly_token[0,20]
+
+    end
+
+  end
 
 end
