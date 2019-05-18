@@ -1,0 +1,28 @@
+
+
+
+<% if @zats.blank? %>
+<p>There are currently no recording sessions scheduled.</p>
+<% else %>
+<p>These are the current recording sessions.</p>
+<br>
+<ol id="zats">
+    <% @zats.each do |c| %>
+    <li> Studio: <%=c.studio.name.capitalize%> ***
+         Engineer: <%=c.engineer.name.capitalize%> ***
+         Artist: <%=c.artist.name.capitalize%> ***
+         Date: <%= c.appointment_date %>
+          <% if c.status == false %>
+         Status: session not yet held
+            <% end %>
+<br>
+<br>
+    </li>
+    <% end %>
+    <% end %>
+
+</ol>
+
+
+
+    
