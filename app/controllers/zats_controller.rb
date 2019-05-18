@@ -3,6 +3,8 @@ class ZatsController < ApplicationController
    def index
       @zats = Zat.all
       @engineers = Engineer.all
+      @studios = Studio.all
+      @artists = Artist.all
    end
 
    def show
