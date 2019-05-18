@@ -14,7 +14,7 @@ class ZatsController < ApplicationController
       @subjects = Subject.all
    end
 
-   def book_params
+   def zat_params
       params.require(:zats).permit(:artist, :studio, :engineer, :appointment_date)
    end
 
