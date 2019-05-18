@@ -29,11 +29,34 @@ Studio : <%= f.text_field :studio %><br />
 Artist : <%= f.text_area :artist %><br />
 <%= f.submit %>
 <% end %>
--------------------------------------------------
-    
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<%= form_for :zat do |f| %>
+<h2>Create a new recording session!</h2>
 <br>
--------------------------------------------------
+<h3>Please select from the dropdowns below to create your new recording session:</h3>
+
+
+
+<%= select("post", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Book a Studio...'}) %>
+
 <br>
-<h3>Please select a location from the dropdown below</h3>
-<%= select_tag 'zat_id', options_for_select(@zats.map{|zat| ["#{zat.studio.name} #{zat.engineer.name} #{zat.artist.name}", zat.id] }) %>
+
+<h5>
+    <%= select("post", "zat_id", @zats.collect {|p| [ p.appointment_date ] }, {prompt: 'Select a date and time for your recording session:'}) %>
     
+    <br>
+    <br>
+<%= select("post", "engineer_id", @engineers.collect {|p| [ p.name, p.id ] }, {prompt: 'Assign an Engineer...'}) %>
+
+<br>
+<br>
+
+<%= select("post", "artist_id", @artists.collect {|p| [ p.name, p.id ] }, {prompt: 'Select an Artist...'}) %>
+
+<br>
+<br>
+<%= f.submit %>
+<% end %>
+<br>
+<br>
