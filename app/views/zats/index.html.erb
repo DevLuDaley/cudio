@@ -23,6 +23,17 @@
 
 </ol>
 
-
-
+<%= form_for :zat do |f| %>
+Engineer name: <%= f.text_field :engineer %><br />
+Studio : <%= f.text_field :studio %><br />
+Artist : <%= f.text_area :artist %><br />
+<%= f.submit %>
+<% end %>
+-------------------------------------------------
+    
+<br>
+-------------------------------------------------
+<br>
+<h3>Please select a location from the dropdown below</h3>
+<%= select_tag 'zat_id', options_for_select(@zats.map{|zat| ["#{zat.studio.name} #{zat.engineer.name} #{zat.artist.name}", zat.id] }) %>
     
