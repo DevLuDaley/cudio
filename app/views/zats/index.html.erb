@@ -2,9 +2,9 @@
 
 
 <% if @zats.blank? %>
-<p>There are currently no recording sessions scheduled.</p>
+<h2>There are currently no recording sessions scheduled.</h2>
 <% else %>
-<p>These are the current recording sessions.</p>
+<h2>Current recording sessions.</h2>
 <br>
 <ol id="zats">
     <% @zats.each do |c| %>
@@ -13,7 +13,9 @@
          Artist: <%=c.artist.name.capitalize%> ***
          Date: <%= c.appointment_date %>
           <% if c.status == false %>
-         Status: session not yet held
+          Status: session scheduled
+          <% else %>
+          Status: session complete
             <% end %>
 <br>
 <br>
@@ -23,12 +25,25 @@
 
 </ol>
 
-<%= form_for :zat do |f| %>
-Engineer name: <%= f.text_field :engineer %><br />
-Studio : <%= f.text_field :studio %><br />
-Artist : <%= f.text_area :artist %><br />
-<%= f.submit %>
-<% end %>
+<ol>
+<li>
+
+        <% Zat.all.each do |c| %>
+        <% if c.incomplete? %>
+       <li> <% c.appointment_date %> </li>
+        Status: session scheduled 
+        <% else %>
+       <li> Status: session complete </li>
+        <% end %>
+        <% end %>
+</li>
+
+
+
+</ol>
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 <%= form_for :zat do |f| %>
@@ -60,3 +75,18 @@ Artist : <%= f.text_area :artist %><br />
 <% end %>
 <br>
 <br>
+
+
+------------------------------------------------------------------------------------------
+<h2>View Studios!</h2>
+
+
+
+
+
+
+
+
+
+
+
