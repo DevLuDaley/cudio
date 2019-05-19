@@ -17,14 +17,14 @@ class ZatsController < ApplicationController
    end
 
    def zat_params
-      params.require(:zats).permit(:artist, :studio, :engineer, :appointment_date)
+      params.require(:zat).permit(:appointment_date, :studio, :engineer, :artist)
    end
 
    def create
       @zat = Zat.new(zat_params)
 
       if @zat.save
-         redirect_to :action => 'list'
+         redirect_to :action => 'index'
       else
          @studios = Studio.all
          render :action => 'new'
@@ -36,29 +36,35 @@ class ZatsController < ApplicationController
       @studios = Studio.all
 
    end
-   
+
    def zat_param
-      params.require(:artist, :studio, :engineer, :appointment_date)
+      params.require(:zat).permit(:appointment_date, :studio, :engineer, :artist)
    end
-   
+
    def update
       @zat = Zat.find(params[:id])
-      
+
       if @zat.update_attributes(zat_param)
          redirect_to :action => 'show', :id => @zat
       else
-         @studios = Studio.all
+
+         @zats = Zat.all
+         @engineers = Engineer.all
+         @engineer = Engineer.find(params[:id])
+        @studios = Studio.all
+        @artists = Artist.all
          render :action => 'edit'
       end
    end
-   
+
    def delete
       Zat.find(params[:id]).destroy
-      redirect_to :action => 'list'
+      redirect_to :action => 'index'
    end
-   
+
    def show_studios
       @studio = Studio.find(params[:id])
    end
 
+   
 end
