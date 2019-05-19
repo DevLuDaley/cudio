@@ -1,3 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    body {
+        font-family: "Times New Roman", Georgia, Serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Playfair Display";
+        letter-spacing: 5px;
+    }
+</style>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">Book a recording session</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">Studios</a>
+                <a href="#menu" class="w3-bar-item w3-button">Artists</a>
+                <a href="#contact" class="w3-bar-item w3-button">Engineers</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Header -->
+
+<h1 class="w3-xxlarge">View Studios</h1>
+</div>
+</header>
+
+<body>
+
 <br>
 
 
@@ -6,32 +51,15 @@
 
 <%= form_for :zat do |f| %>
 Engineer name: <%= f.text_field :engineer %><br />
-Studio : <%= f.text_field :studio %><br />
+Studio : <%= f.text_field(:studio, :name) %><br />
 Artist : <%= f.text_area :artist %><br />
+Appointment Date : <%= f.text_area :appointment_date %><br />
 <%= f.submit %>
 <% end %>
 
 <br>
 <br>
------------------------------------------------------------------------------------------------------------------------------------------------------------
-<br>
-<br>
-<%= form_tag zats_path do %>
-<label>recording session date:</label><br>
-<%= text_field_tag :appointment_date %><br>
-<label>recording session location</label><br>
-<%= text_field :name, :class => "edit-recording-session", :placeholder => "create new recording session..." %>
-<%= text_area_tag :artist_id %><br>
-
-<%= submit_tag "Create New Recording Session" %>
-<% end %>
-
-
-
-
-<br>
-<br>
------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
 <br>
 <br>
 
@@ -55,9 +83,53 @@ Artist : <%= f.text_area :artist %><br />
 
 
 
+------------------------------------------------
+<div>
+    
+    <form class="edit_list" id="edit_list_1" action="/zats/:id" accept-charset="UTF-8" method="post">
+        <input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="_method" value="patch" />
+        <input type="hidden" name="authenticity_token"
+            value="xvH5oMgncW/AZAVhIh5pXWtPoMYbQ/BjllTGLufOQVthBTwzBadiY4x1ExI8Um/HO5C/nu5wbGa0MrZq4xTiBg==" />
+        <label for="appointment_date">Appointment Date</label>
+        datetime_field_tag(name, value = nil, options = {})
+        <input type="text" value="" name="zat[appointment_date]" id="appointment_date" />
+        <input type="submit" name="commit" value="Update Appointment" />
+    </form>
+
+</div> 
 
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+---------------------------------------
 
+<p class="w3-text-blue-grey w3-large"><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
+<p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
+<form action="/action_page.php" target="_blank">
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="Studio" required name="Name"></p>
+    <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date"
+            value="2019-05-21T07:00"></p>
+    <p><input class="w3-input w3-padding-16" type="artist" placeholder="Artist" required name="Artist"></p>
+    <p><input class="w3-input w3-padding-16" type="text" placeholder="Engineer" required
+            name="Message"></p>
+    <p><button class="w3-button w3-light-grey w3-section" type="submit">Update</button></p>
+</form>
+</div>
 
+<!-- End page content -->
+</div>
 
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+            class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+</body>
+
+</html>
