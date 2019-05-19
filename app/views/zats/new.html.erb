@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    body {
+        font-family: "Avenir Next", Georgia, Serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Playfair Display";
+        letter-spacing: 5px;
+    }
+</style>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">zat app</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#studios" class="w3-bar-item w3-button">Studios</a>
+                <a href="#artists" class="w3-bar-item w3-button">Artists</a>
+                <a href="#engineers" class="w3-bar-item w3-button">Engineers</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+   
+            <h1 class="w3-xxlarge">View Studios</h1>
+        </div>
+    </header>
+
+    <body>
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+            <%= form_for :zat do |f| %>
+<h2>Create a new recording session!</h2>
+<br>
+<h3>Please select from the dropdowns below to create your new recording session:</h3>
+
+
+
+<%= select("post", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Book a Studio...'}) %>
+
+<br>
+
+<h5>
+<%= select("post", "zat_id", @zats.collect {|p| [ p.appointment_date ] }, {prompt: 'Select a date and time for your recording session:'}) %>
+
+    <br>
+    <br>
+    <%= select("post", "engineer_id", @engineers.collect {|p| [ p.name, p.id ] }, {prompt: 'Assign an Engineer...'}) %>
+
+    <br>
+    <br>
+
+    <%= select("post", "artist_id", @artists.collect {|p| [ p.name, p.id ] }, {prompt: 'Select an Artist...'}) %>
+
+    <br>
+    <br>
+            <%= f.submit %>
+            <% end %>
+    <br>
+    <br>
+
+
+
+
+
+------------------------------------------------------------------------------------------
+<h2>View Studios!</h2>
