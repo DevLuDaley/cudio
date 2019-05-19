@@ -25,7 +25,7 @@
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
         <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-            <a href="#home" class="w3-bar-item w3-button">Book a recording session</a>
+            <a href="#home" class="w3-bar-item w3-button">Book a Recording Session</a>
             <!-- Right-sided navbar links. Hide them on small screens -->
             <div class="w3-right w3-hide-small">
                 <a href="#about" class="w3-bar-item w3-button">Studios</a>
@@ -41,24 +41,72 @@
 </div>
 </header>
 
-<body>
+                                <body>
 
 <br>
+
+
+
 
 
 
 </ol>
 
-<%= form_for :zat do |f| %>
-Engineer name: <%= f.text_field :engineer %><br />
-Studio : <%= f.text_field(:studio, :name) %><br />
-Artist : <%= f.text_area :artist %><br />
-Appointment Date : <%= f.text_area :appointment_date %><br />
+<%= form_for @zat , url: {action: "update"} do |f| %>
+Engineer: <%= f.text_field :engineer %><br />
+Studio : <%= f.text_field :studio %><br />
+Artist : <%= f.text_field :artist %><br />
+<p></p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date"
+        value="2019-05-21T07:00"></p>
+Appointment Date : <%= f.text_field :appointment_date %><br />
+<%= select("post", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Studio...'}) %>
 <%= f.submit %>
 <% end %>
 
 <br>
 <br>
+--------------------------------------------------
+<table>
+    <thead>
+        <tr>
+            <th>Engineer</th>
+            <th>Artist</th>
+            <th>Studio</th>
+            <th>Recording Session Date</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+    <% @zats.each do |c| %>
+    <tbody>
+        <tr>
+            <td><a href="/engineers/@engineer_id page/:id"><%= c.engineer.name.capitalize %></a></td>
+            <td><a href="/artists/:artist_id"><%= c.artist.name.capitalize %></a></td>
+            <td><a href="/studios/@studios_path"><%= c.studio.name.capitalize %></a></td>
+            <td><a href="/zats/:id/edit"><%= c.appointment_date.time.to_formatted_s(:rfc822) %></a></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+--------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
 <br>
 <br>
@@ -108,18 +156,52 @@ Appointment Date : <%= f.text_area :appointment_date %><br />
 <br>
 ---------------------------------------
 
-<p class="w3-text-blue-grey w3-large"><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
-<p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
+<p class="w3-text-blue-grey w3-large"><b>Recording Studios, 42nd Living St, 43043 New York, NY</b></p>
+<br>
 <form action="/action_page.php" target="_blank">
-    <p><input class="w3-input w3-padding-16" type="text" placeholder="Studio" required name="Name"></p>
     <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date"
-            value="2019-05-21T07:00"></p>
-    <p><input class="w3-input w3-padding-16" type="artist" placeholder="Artist" required name="Artist"></p>
-    <p><input class="w3-input w3-padding-16" type="text" placeholder="Engineer" required
-            name="Message"></p>
+        value="2019-05-21T07:00"></p>
+        <%= select("post", "studio_id", @studios.collect {|p| [ p.name] }, {prompt: 'studio.name'}) %>
+    <%= select("post", "artist_id", @artists.collect {|p| [ p.name] }, {prompt: 'artist.name'}) %>
+    <%= select("post", "engineer_id", @engineers.collect {|p| [ p.name] }, {prompt: 'engineer.name'}) %>
+
     <p><button class="w3-button w3-light-grey w3-section" type="submit">Update</button></p>
 </form>
 </div>
+
+
+
+------------------------------------------------------
+
+
+<%= form_for :zat do |f| %>
+<h2>Create a new recording session!</h2>
+<br>
+<h3>Please select from the dropdowns below to create your new recording session:</h3>
+
+
+
+<%= select("post", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Book a Studio...'}) %>
+
+<br>
+<br>
+    <%= f.submit %>
+    <% end %>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- End page content -->
 </div>
