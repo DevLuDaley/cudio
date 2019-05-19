@@ -1,52 +1,106 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    body {
+        font-family: "Avenir Next", Georgia, Serif;
+    }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Playfair Display";
+        letter-spacing: 5px;
+    }
+</style>
 
+<body>
 
-<% if @zats.blank? %>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">Book a recording session</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#studios" class="w3-bar-item w3-button">Studios</a>
+                <a href="#artists" class="w3-bar-item w3-button">Artists</a>
+                <a href="#engineers" class="w3-bar-item w3-button">Engineers</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+   
+            <h1 class="w3-xxlarge">View Studios</h1>
+        </div>
+    </header>
+
+    <body>
+
+            <% if @zats.blank? %>
 <h2>There are currently no recording sessions scheduled.</h2>
-<% else %>
-<h2>Current recording sessions.</h2>
-<br>
-<ol id="zats">
-    <% @zats.each do |c| %>
-    <li> Studio: <%=c.studio.name.capitalize%> ***
-         Engineer: <%=c.engineer.name.capitalize%> ***
-         Artist: <%=c.artist.name.capitalize%> ***
-         Date: <%= c.appointment_date %>
-          <% if c.status == false %>
-          Status: session scheduled
-          <% else %>
-          Status: session complete
-            <% end %>
-<br>
-<br>
-    </li>
-    <% end %>
-    <% end %>
-
-</ol>
-
-<ol>
-<li>
-
-        <% Zat.all.each do |c| %>
-        <% if c.incomplete? %>
-       <li> <% c.appointment_date %> </li>
-        Status: session scheduled 
         <% else %>
-       <li> Status: session complete </li>
+<h2>Recording Sessions</h1>
+<br>
+
+<table>
+    <thead>
+        <tr>
+            <th>Engineer</th>
+            <th>Artist</th>
+            <th>Studio</th>
+            <th>Recording Session Date</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+            <% @zats.each do |c| %>
+    <tbody>
+    <tr>
+    <td><a href="/engineers/@engineer_id page/:id"><%= c.engineer.name.capitalize %></a></td>
+    <td><a href="/artists/:artist_id"><%= c.artist.name.capitalize %></a></td>
+    <td><a href="/studios/@studios_path"><%= c.studio.name.capitalize %></a></td>
+    <td><a href="/zats/:id/edit"><%= c.appointment_date.time.to_formatted_s(:rfc822) %></a></td>
+    </tr>
+            <% end %>
+    </tbody>
+</table>
+
+<br>
+
+<section class="main">
+    <input class="toggle-all" type="checkbox">
+    <label for="toggle-all">Mark all as complete</label>
+</section>
+
+    <%= form_for :zat do |f| %>
+ 
+    
+    <%= select("post", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Book a Studio...'}) %>
+    
+    <br>
+    <%= select("post", "artist_id", @artists.collect {|p| [ p.name, p.id ] }, {prompt: 'Select an Artist...'}) %>
+    
+        <br>
+        <br>
+        <%= f.submit %>
         <% end %>
-        <% end %>
-</li>
+        <br>
+        <br>
 
 
 
-</ol>
+        <p> <% end %> </p>
 
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
-
------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-<%= form_for :zat do |f| %>
+            <%= form_for :zat do |f| %>
 <h2>Create a new recording session!</h2>
 <br>
 <h3>Please select from the dropdowns below to create your new recording session:</h3>
@@ -59,34 +113,26 @@
 
 <h5>
     <%= select("post", "zat_id", @zats.collect {|p| [ p.appointment_date ] }, {prompt: 'Select a date and time for your recording session:'}) %>
-    
+
     <br>
     <br>
-<%= select("post", "engineer_id", @engineers.collect {|p| [ p.name, p.id ] }, {prompt: 'Assign an Engineer...'}) %>
+    <%= select("post", "engineer_id", @engineers.collect {|p| [ p.name, p.id ] }, {prompt: 'Assign an Engineer...'}) %>
 
-<br>
-<br>
+    <br>
+    <br>
 
-<%= select("post", "artist_id", @artists.collect {|p| [ p.name, p.id ] }, {prompt: 'Select an Artist...'}) %>
+    <%= select("post", "artist_id", @artists.collect {|p| [ p.name, p.id ] }, {prompt: 'Select an Artist...'}) %>
 
-<br>
-<br>
-<%= f.submit %>
-<% end %>
-<br>
-<br>
+    <br>
+    <br>
+            <%= f.submit %>
+            <% end %>
+    <br>
+    <br>
+
+
+
 
 
 ------------------------------------------------------------------------------------------
 <h2>View Studios!</h2>
-
-
-
-
-
-
-
-
-
-
-
