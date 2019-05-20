@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 class ZatsController < ApplicationController
-  
-   def index
+  def index
     @zats = Zat.all
     @engineers = Engineer.all
     @studios = Studio.all
     @artists = Artist.all
-    #    redirect_to action: 'index'
-  end
+   #    redirect_to action: 'index'
+ end
 
   def show
+    # binding.pry
     @zat = Zat.find(params[:id])
     #     redirect_to action: 'index'
   end
@@ -18,14 +18,18 @@ class ZatsController < ApplicationController
   def new
     @zat = Zat.new
     # params.require(:zat).permit(:appointment_date, :studio_id, :engineer_id, :artist_id)
-
+     # if artist_id or not -- that
+    # if nested_--tind artist build --what is associated
     index
   end
 
   def create
+    # binding.pry
     @zat = Zat.new(zat_params)
     index
+    @zat = Zat.find(params[:id])
     if @zat.save
+      # raise params.inspect
       redirect_to action: 'index' # , notice: 'Recording Session created'
     else
       # @studios = Studio.all
@@ -63,8 +67,13 @@ class ZatsController < ApplicationController
     index
     @zat = Zat.find(params[:id])
     # raise params.inspect
-    @zat.update(params.require(:zat).permit(:appointment_date, :studio_id, :engineer_id, :artist_id))
-    redirect_to zat_path(@zat)
+    if @zat.update(params.require(:zat).permit(:appointment_date, :studio_id, :engineer_id, :artist_id))
+      # binding.pry
+      redirect_to zat_path(@zat)
+
+    else
+      render 'edit'
+  end
   end
 
   #   def update
