@@ -45,70 +45,27 @@
 
 
     <!-- NEW FORM -->
-<%= form_for [@engineer,@zat] do |f| %>
+<%= form_for [@engineer,@zat] do |p| %>
 
+<h2>Create a New Session</h2>
+<h4>Use the dropdown menus below:</h4>
+    <h5>
+         <%= select("zat", "studio_id", @studios.collect {|p| [ p.name] }, {prompt: 'Book Studio'}) %>
+            <br>
+            <br>
+         <%= select("zat", "appointment_date", @zats.collect {|p| [ p.appointment_date] }, {prompt: 'Select Date and Time'}) %>
 
-<h2>Create a new recording session using the dropdowns below:</h2>
-<br>
-
-    <h4>
-         <%= select("zat", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Book a Studio...'}) %>
+    <br>
+    <br>
+        <%= select("zat", "engineer_id", @engineers.collect {|p| [ p.name] }, {prompt: 'Assign Engineer'}) %>
+            <br>
+            <br>
+        <%= select("zat", "artist_id", @artists.collect {|p| [ p.name] }, {prompt: 'Select Artist'}) %>
 
     <br>
     <br>
 
-        <%= select("zat", "appointment_date", @zats.collect {|p| [ p.appointment_date, p.appointment_date ] }, {prompt: 'Select a date and time for your recording session:'}) %>
-
-    <br>
-    <br>
-        <%= select("zat", "engineer_id", @engineers.collect {|p| [ p.name, p.id ] }, {prompt: 'Assign an Engineer...'}) %>
-
-    <br>
-    <br>
-
-        <%= select("zat", "artist_id", @artists.collect {|p| [ p.name, p.id ] }, {prompt: 'Select an Artist...'}) %>
-
-    <br>
-    <br>
-            <%= f.submit %>
+    <%= p.submit %>
             <% end %>
 </h4>
-    <br>
-    <br>
-
-
 <!-- END OF NEW FORM -->
-<br>
-<br>
-<br>
-<br>
-
-<br>
-<br>
-<br>
-<br>
-
-<br>
-<br>
-<br>
-<br>
-
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
-
-
-<h2>View Studios!</h2>
-
-
-
-
-<form action="/zats/new" method="post">
-    <input type="text" name="engineer[name]" value="hey" />
-</form>
