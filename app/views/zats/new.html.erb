@@ -51,7 +51,7 @@
 <h2>Create a new recording session using the dropdowns below:</h2>
 <br>
 
-    <h4>   
+    <h4>
          <%= select("create", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Book a Studio...'}) %>
 
     <br>
@@ -111,5 +111,4 @@
 
 <form action="/zats/new" method="post">
     <input type="text" name="engineer[name]" value="hey" />
-    
 </form>
