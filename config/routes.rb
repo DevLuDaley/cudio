@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'studio/index'
-  get 'artist/index'
+  # get 'engineers/index'
+  # get 'studios/index'
+  # get 'artists/index'
   #  devise_for :engineers
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'zats/index'
@@ -12,14 +13,12 @@ Rails.application.routes.draw do
   get 'engineers/:id', to: 'engineers#show', as: 'engineer'
 
   resources :zats
-
   resources :artists # , :videos
   resources :studios
 
+  # get 'engineers/:id/zats/:zats_id'
+  devise_for :engineers, controllers: { omniauth_callbacks: 'engineers/omniauth_callbacks', registrations: 'registrations' }
   resources :engineers do
     resources :zats
   end
-  # get 'engineers/:id/zats/:zats_id'
-
-  devise_for :engineers, controllers: { omniauth_callbacks: 'engineers/omniauth_callbacks', registrations: 'registrations' }
 end
