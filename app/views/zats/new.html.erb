@@ -50,17 +50,16 @@
 <h2>Create a New Session</h2>
 <h4>Use the dropdown menus below:</h4>
     <h5>
-         <%= select("zat", "studio_id", @studios.collect {|p| [ p.name] }, {prompt: 'Book Studio'}) %>
+         <%= select("zat", "studio_id", @studios.collect {|p| [ p.name, p.id] }, {prompt: 'Book Studio'}) %>
             <br>
             <br>
          <%= select("zat", "appointment_date", @zats.collect {|p| [ p.appointment_date] }, {prompt: 'Select Date and Time'}) %>
 
     <br>
     <br>
-        <%= select("zat", "engineer_id", @engineers.collect {|p| [ p.name] }, {prompt: 'Assign Engineer'}) %>
+        <%= select("zat", "engineer_id", @engineers.collect {|p| [ p.name, p.id] }, {prompt: 'Assign Engineer'}) %>
             <br>
             <br>
-        <%= select("zat", "artist_id", @artists.collect {|p| [ p.name] }, {prompt: 'Select Artist'}) %>
 
     <br>
     <br>
