@@ -45,28 +45,28 @@
 
 
     <!-- NEW FORM -->
-<%= form_for @zat , url: {action: "create"} do |f| %>
+<%= form_for [@engineer,@zat] do |f| %>
 
 
 <h2>Create a new recording session using the dropdowns below:</h2>
 <br>
 
     <h4>
-         <%= select("create", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Book a Studio...'}) %>
+         <%= select("zat", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Book a Studio...'}) %>
 
     <br>
     <br>
 
-        <%= select("create", "appointment_date", @zats.collect {|p| [ p.appointment_date, p.appointment_date ] }, {prompt: 'Select a date and time for your recording session:'}) %>
+        <%= select("zat", "appointment_date", @zats.collect {|p| [ p.appointment_date, p.appointment_date ] }, {prompt: 'Select a date and time for your recording session:'}) %>
 
     <br>
     <br>
-        <%= select("create", "engineer_id", @engineers.collect {|p| [ p.name, p.id ] }, {prompt: 'Assign an Engineer...'}) %>
+        <%= select("zat", "engineer_id", @engineers.collect {|p| [ p.name, p.id ] }, {prompt: 'Assign an Engineer...'}) %>
 
     <br>
     <br>
 
-        <%= select("create", "artist_id", @artists.collect {|p| [ p.name, p.id ] }, {prompt: 'Select an Artist...'}) %>
+        <%= select("zat", "artist_id", @artists.collect {|p| [ p.name, p.id ] }, {prompt: 'Select an Artist...'}) %>
 
     <br>
     <br>
