@@ -6,10 +6,12 @@ class ZatsController < ApplicationController
     @engineers = Engineer.all
     @studios = Studio.all
     @artists = Artist.all
+    #    redirect_to action: 'index'
   end
 
   def show
     @zat = Zat.find(params[:id])
+    #     redirect_to action: 'index'
   end
 
   def new
