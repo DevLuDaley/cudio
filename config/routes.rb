@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :zats
-  resources :artists # , :videos
-  resources :studios
-  devise_for :engineers, controllers: { omniauth_callbacks: 'engineers/omniauth_callbacks', registrations: 'registrations' }
+  resources :zats, :artists, :studios
+  resources :artists do
+    resources :zats # , only: :create
+  end
 
-  resources :engineers
+  devise_for :engineers, controllers: { omniauth_callbacks: 'engineers/omniauth_callbacks', registrations: 'registrations' }
 
   #  get 'zats/:id', to: 'zats#show', as: 'session'
   # get 'zats/index'
