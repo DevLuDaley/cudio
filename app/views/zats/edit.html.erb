@@ -45,27 +45,21 @@
 
 <br>
 
-
-
-
-
-
-</ol>
-
 <%= form_for @zat , url: {action: "update"} do |f| %>
-Engineer: <%= f.text_field :engineer %><br />
-Studio : <%= f.text_field :studio %><br />
-Artist : <%= f.text_field :artist %><br />
-<p></p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date"
-        value="2019-05-21T07:00"></p>
+<label>Engineer ID:</label><br>
+<%= f.text_field :engineer_id %><br>
+<label>Studio ID:</label><br>
+<%= f.text_field :studio_id %><br>
+<label>Artist ID:</label><br>
+<%= f.text_field :artist_id %><br>
+<input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date"
+    value="2019-05-21T07:00"></p>
 Appointment Date : <%= f.text_field :appointment_date %><br />
-<%= select("post", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Studio...'}) %>
 <%= f.submit %>
 <% end %>
 
-<br>
-<br>
---------------------------------------------------
+
+<h3>Recording Sessions</h3>
 <table>
     <thead>
         <tr>
@@ -94,83 +88,6 @@ Appointment Date : <%= f.text_field :appointment_date %><br />
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
----------------------------------------------------------------------------------------------------------------------------------------------
-<br>
-<br>
-
-<%= form_for @zat , url: {action: "update"} do |f| %>
-<%= f.label 'Recording Session Date' %><br>
-<%= f.text_field :appointment_date %><br>
-
-
-<%= f.label 'Recording Session Location' %><br>
-<%= f.text_field :studio_id %><br>
-
-<%= f.label 'Recording Session Engineer' %><br>
-<%= f.text_field :engineer_id %><br>
-
-
-<%= f.label 'Recording Session Artist' %><br>
-<%= f.text_field :artist_id %><br>
-
-<%= f.submit "Update" %>
-<% end %>
-
-
-
-------------------------------------------------
-<div>
-    
-    <form class="edit_list" id="edit_list_1" action="/zats/:id" accept-charset="UTF-8" method="post">
-        <input name="utf8" type="hidden" value="&#x2713;" />
-        <input type="hidden" name="_method" value="patch" />
-        <input type="hidden" name="authenticity_token"
-            value="xvH5oMgncW/AZAVhIh5pXWtPoMYbQ/BjllTGLufOQVthBTwzBadiY4x1ExI8Um/HO5C/nu5wbGa0MrZq4xTiBg==" />
-        <label for="appointment_date">Appointment Date</label>
-        datetime_field_tag(name, value = nil, options = {})
-        <input type="text" value="" name="zat[appointment_date]" id="appointment_date" />
-        <input type="submit" name="commit" value="Update Appointment" />
-    </form>
-
-</div> 
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
----------------------------------------
-
-<p class="w3-text-blue-grey w3-large"><b>Recording Studios, 42nd Living St, 43043 New York, NY</b></p>
-<br>
-<form action="/action_page.php" target="_blank">
-    <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date"
-        value="2019-05-21T07:00"></p>
-        <%= select("post", "studio_id", @studios.collect {|p| [ p.name] }, {prompt: 'studio.name'}) %>
-    <%= select("post", "artist_id", @artists.collect {|p| [ p.name] }, {prompt: 'artist.name'}) %>
-    <%= select("post", "engineer_id", @engineers.collect {|p| [ p.name] }, {prompt: 'engineer.name'}) %>
-
-    <p><button class="w3-button w3-light-grey w3-section" type="submit">Update</button></p>
-</form>
-</div>
-
-
-
 ------------------------------------------------------
 
 
@@ -192,12 +109,17 @@ Appointment Date : <%= f.text_field :appointment_date %><br />
 
 
 
+<br>
+<form action="/action_page.php" target="_blank">
+    <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date"
+            value="2019-05-21T07:00"></p>
+    <%= select("post", "studio_id", @studios.collect {|p| [ p.name] }, {prompt: 'studio.name'}) %>
+    <%= select("post", "artist_id", @artists.collect {|p| [ p.name] }, {prompt: 'artist.name'}) %>
+    <%= select("post", "engineer_id", @engineers.collect {|p| [ p.name] }, {prompt: 'engineer.name'}) %>
 
-
-
-
-
-
+    <p><button class="w3-button w3-light-grey w3-section" type="submit">Update</button></p>
+</form>
+</div>
 
 
 
