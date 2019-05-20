@@ -9,11 +9,16 @@ Rails.application.routes.draw do
   get 'zats/:id/edit', to: 'zats#edit', as: :edit_zat
   patch 'zats/:id', to: 'zats#update'
   # post 'zats/new', to: 'zats#new'
+  get 'engineers/:id', to: 'engineers#show', as: 'engineer'
+
   resources :zats
 
   resources :artists # , :videos
   resources :studios
 
+  resources :engineers do
+    resources :zats
+  end
   # get 'engineers/:id/zats/:zats_id'
 
   devise_for :engineers, controllers: { omniauth_callbacks: 'engineers/omniauth_callbacks', registrations: 'registrations' }
