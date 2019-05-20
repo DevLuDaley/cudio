@@ -1,0 +1,22 @@
+<div>
+    <h2> Edit Recording Session </h2>
+        <%= form_for @zat , url: {action: "update"} do |f| %>
+<label>Engineer ID:</label><br>
+        <%= f.text_field :engineer_id %><br>
+<label>Studio ID:</label><br>
+        <%= f.text_field :studio_id %><br>
+<label>Artist ID:</label><br>
+        <%= f.text_field :artist_id %><br>
+<input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date"
+    value="2019-05-21T07:00"></p>
+    Appointment Date : <%= f.text_field :appointment_date %><br />
+<%= f.submit %>
+<% end %>
+<br>
+<%= link_to 'Delete Appointment', [@zat],
+                  method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'Show', @zat %> |
+<%= link_to 'Recording Sessions', zats_path %>
+
+
