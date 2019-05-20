@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'zats/index'
   get 'zats/:id/edit', to: 'zats#edit', as: :edit_zat
   patch 'zats/:id', to: 'zats#update'
+  # post 'zats/new', to: 'zats#new'
   resources :zats
 
   resources :artists # , :videos
