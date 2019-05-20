@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class ZatsController < ApplicationController
-  def index
+  
+   def index
     @zats = Zat.all
     @engineers = Engineer.all
     @studios = Studio.all
@@ -83,7 +84,7 @@ class ZatsController < ApplicationController
   #     end
   #   end
 
-  def delete
+  def destroy
     Zat.find(params[:id]).destroy
     redirect_to action: 'index'
   end
