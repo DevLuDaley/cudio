@@ -36,7 +36,6 @@
     </div>
 
     <!-- Header -->
-   
             <h1 class="w3-xxlarge">View Studios</h1>
         </div>
     </header>
@@ -45,41 +44,72 @@
 
 
 
---------------------------------------------------------------------------------------------------------------------------------------------------
-
-            <%= form_for :zat do |f| %>
-<h2>Create a new recording session!</h2>
-<br>
-<h3>Please select from the dropdowns below to create your new recording session:</h3>
+    <!-- NEW FORM -->
+<%= form_for @zat , url: {action: "create"} do |f| %>
 
 
-
-<%= select("post", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Book a Studio...'}) %>
-
+<h2>Create a new recording session using the dropdowns below:</h2>
 <br>
 
-<h5>
-<%= select("post", "zat_id", @zats.collect {|p| [ p.appointment_date ] }, {prompt: 'Select a date and time for your recording session:'}) %>
-
-    <br>
-    <br>
-    <%= select("post", "engineer_id", @engineers.collect {|p| [ p.name, p.id ] }, {prompt: 'Assign an Engineer...'}) %>
+    <h4>   
+         <%= select("create", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Book a Studio...'}) %>
 
     <br>
     <br>
 
-    <%= select("post", "artist_id", @artists.collect {|p| [ p.name, p.id ] }, {prompt: 'Select an Artist...'}) %>
+        <%= select("create", "appointment_date", @zats.collect {|p| [ p.appointment_date, p.appointment_date ] }, {prompt: 'Select a date and time for your recording session:'}) %>
+
+    <br>
+    <br>
+        <%= select("create", "engineer_id", @engineers.collect {|p| [ p.name, p.id ] }, {prompt: 'Assign an Engineer...'}) %>
+
+    <br>
+    <br>
+
+        <%= select("create", "artist_id", @artists.collect {|p| [ p.name, p.id ] }, {prompt: 'Select an Artist...'}) %>
 
     <br>
     <br>
             <%= f.submit %>
             <% end %>
+</h4>
     <br>
     <br>
 
 
+<!-- END OF NEW FORM -->
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
 
 
 
-------------------------------------------------------------------------------------------
+
+
+
+
 <h2>View Studios!</h2>
+
+
+
+
+<form action="/zats/new" method="post">
+    <input type="text" name="engineer[name]" value="hey" />
+    
+</form>
