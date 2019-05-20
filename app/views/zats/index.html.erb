@@ -42,20 +42,25 @@
     </header>
 
     <body>
+    <!-- DISPLAY Zat.ALL -->
+
+<section class="main">
 
             <% if @zats.blank? %>
 <h2>There are currently no recording sessions scheduled.</h2>
         <% else %>
-<h2>Recording Sessions</h1>
+<h2>Scheduled Recording Sessions</h1>
 <br>
 
 <table>
     <thead>
         <tr>
+            <th>ID</th>
             <th>Engineer</th>
             <th>Artist</th>
             <th>Studio</th>
             <th>Recording Session Date</th>
+            <th>Complete</th>
             <th colspan="3"></th>
         </tr>
     </thead>
@@ -63,89 +68,61 @@
             <% @zats.each do |c| %>
     <tbody>
     <tr>
+    <td><a href="/engineers/@engineer_id page/:id"><%= c.id %></a></td>
     <td><a href="/engineers/@engineer_id page/:id"><%= c.engineer.name.capitalize %></a></td>
     <td><a href="/artists/:artist_id"><%= c.artist.name.capitalize %></a></td>
     <td><a href="/studios/@studios_path"><%= c.studio.name.capitalize %></a></td>
     <td><a href="/zats/:id/edit"><%= c.appointment_date.time.to_formatted_s(:rfc822) %></a></td>
+    <td><a href="/zats/:id/edit"><%= c.status %></a></td>
     </tr>
             <% end %>
     </tbody>
 </table>
 
-<br>
+<p> <% end %> </p>
 
-<section class="main">
-    <input class="toggle-all" type="checkbox">
-    <label for="toggle-all">Mark all as complete</label>
+<br>
 </section>
 
-    <%= form_for :zat do |f| %>
- 
-    
-    <%= select("post", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Book a Studio...'}) %>
-    
-    <br>
-    <%= select("post", "artist_id", @artists.collect {|p| [ p.name, p.id ] }, {prompt: 'Select an Artist...'}) %>
-    
-        <br>
-        <br>
-        <%= f.submit %>
-        <% end %>
-        <br>
-        <br>
+<!-- LINK TO CREATE NEW SESSION FORM -->
+http://localhost:3000/zats/new
 
+<!-- TESTING Link_to functionality -->
 
-
-        <p> <% end %> </p>
-
---------------------------------------------------------------------------------------------------------------------------------------------------
-
-            <%= form_for :zat do |f| %>
-<h2>Create a new recording session!</h2>
-<br>
-<h3>Please select from the dropdowns below to create your new recording session:</h3>
-
-
-
-<%= select("post", "studio_id", @studios.collect {|p| [ p.name, p.id ] }, {prompt: 'Book a Studio...'}) %>
-
-<br>
-
-<h5>
-<%= select("post", "zat_id", @zats.collect {|p| [ p.appointment_date ] }, {prompt: 'Select a date and time for your recording session:'}) %>
-
-    <br>
-    <br>
-    <%= select("post", "engineer_id", @engineers.collect {|p| [ p.name, p.id ] }, {prompt: 'Assign an Engineer...'}) %>
-
-    <br>
-    <br>
-
-    <%= select("post", "artist_id", @artists.collect {|p| [ p.name, p.id ] }, {prompt: 'Select an Artist...'}) %>
-
-    <br>
-    <br>
-            <%= f.submit %>
-            <% end %>
-    <br>
-    <br>
-
-
-
-
-
-------------------------------------------------------------------------------------------
 <h2>View Studios!</h2>
-
-
-
 
 ---------------------test
 <table>
     <% @studios.each do |studio| %>
     <tr>
-        <th> <%= link_to 'Show', studio.name %> </th>
+        <th> <%= link_to 'why', studio.name %> </th>
     </tr>
     <% end %>
 </table>
 -----------------------------------------------------------------
+
+<!-- test code -->
+
+<table>
+    <thead>
+        <tr>
+            <th>Recording ID</th>
+            <th>Recording Date</th>
+            <th>Status</th>
+            <th>Delete</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+    <% @zats.each do |zat| %>
+    <tbody>
+        <tr>
+            <td><a href='/zats/:id'><%= zat.id %></a></td>
+            <td><a href="/zats/:artist_id"><%= zat.appointment_date.time.to_formatted_s(:rfc822) %></a></td>
+            <td><a href="/zats/:artist_id"><%= zat.status %></a></td>
+            <td><a href="/zats/:artist_id"><%= link_to "Delete", zat, method: :delete, data: { confirm: "Really?" } %></a></td>
+            
+        </tr>
+        <% end %>
+    </tbody>
+</table>
