@@ -19,15 +19,11 @@ class ZatsController < ApplicationController
     index
   end
 
-  def zat_params
-    params.require(:zat).permit(:appointment_date, :studio_id, :engineer_id, :artist_id)
-  end
-
   def create
     @zat = Zat.new(zat_params)
     index
     if @zat.save
-      redirect_to action: 'index', notice: 'Recording Session created'
+      redirect_to action: 'index' # , notice: 'Recording Session created'
     else
       # @studios = Studio.all
       render action: 'new'
@@ -93,4 +89,10 @@ class ZatsController < ApplicationController
   def show_studios
     @studio = Studio.find(params[:id])
   end
+end
+
+private
+
+def zat_params
+  params.require(:zat).permit(:appointment_date, :studio_id, :engineer_id, :artist_id)
 end
