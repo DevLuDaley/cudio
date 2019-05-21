@@ -10,9 +10,11 @@ class ZatsController < ApplicationController
  end
 
   def show
+    index
     # binding.pry
     @zat = Zat.find(params[:id])
     #     redirect_to action: 'index'
+    
   end
 
   def new
@@ -31,6 +33,7 @@ class ZatsController < ApplicationController
     if @zat.save
       # raise params.inspect
       redirect_to action: 'index' # , notice: 'Recording Session created'
+      #redirect_to @zat # , notice: 'Recording Session created'
     else
       # @studios = Studio.all
       render action: 'new'
