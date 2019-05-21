@@ -5,6 +5,19 @@
 <h2>Create a New Session</h2>
 <h4>Use the dropdown menus below:</h4>
 <br>
+        <%if @zat.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@zat.errors.count, "error") %>
+                prohibited this item from being saved:
+                <% @zat.errors.full_messages.each do |msg| %>
+            </h2>
+            <ul style="list-style: none;">
+                <li><div class= "alert alert-danger"><%= msg %></div></li>
+                <% end %>
+            </ul>
+            <%  end %>
+
     <h5>
          <%= select("zat", "studio_id", @studios.collect {|p| [ p.name, p.id] }, {prompt: 'Book Studio'}) %>
             <br>
@@ -21,7 +34,7 @@
     <br>
     <br>
 
-    <%= p.submit %>
+    <%= p.submit({:class => 'btn btn-primary'}) %>
             <% end %>
 </h4>
 <!-- END OF NEW FORM -->
