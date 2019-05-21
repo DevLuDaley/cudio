@@ -7,9 +7,21 @@ class StudiosController < ApplicationController
 
   def index
  @studios = Studio.all
-   # @zats = Zat.all
-   # @engineers = Engineer.all
-   # @artists = Artist.all
+   @zats = Zat.all
+   @engineers = Engineer.all
+   @artists = Artist.all
    # redirect_to action: 'index'
  end
+
+
+
+
+
+def show
+    index
+    # binding.pry
+    @studio = Studio.find(params[:id])
+    #     redirect_to action: 'index'
+    
+  end
 end
