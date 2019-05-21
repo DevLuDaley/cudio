@@ -1,7 +1,9 @@
 
 -------------------------------------------------------------------------------------------------
 
-
+should I just recreate all the same CRUD pages for each model?
+what about methods?
+Should I repeat the same methods in each model or is that what a helper does?
 
 [] NEXT
 -------------------------------------------------------------------------------
