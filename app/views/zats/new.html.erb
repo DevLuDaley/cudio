@@ -45,7 +45,7 @@
 
 
     <!-- NEW FORM -->
-<%= form_for [@engineer,@zat] do |p| %>
+<%= form_for [@engineer,@zat], url: {action: "create"} do |p| %>
 
 <h2>Create a New Session</h2>
 <h4>Use the dropdown menus below:</h4>
@@ -60,6 +60,7 @@
         <%= select("zat", "engineer_id", @engineers.collect {|p| [ p.name, p.id] }, {prompt: 'Assign Engineer'}) %>
             <br>
             <br>
+        <%= select("zat", "artist_id", @artists.collect {|p| [ p.name, p.id] }, {prompt: 'Select Artist'}) %>
 
     <br>
     <br>
