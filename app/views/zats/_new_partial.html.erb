@@ -4,6 +4,7 @@
 
 <h2>Create a New Session</h2>
 <h4>Use the dropdown menus below:</h4>
+<br>
     <h5>
          <%= select("zat", "studio_id", @studios.collect {|p| [ p.name, p.id] }, {prompt: 'Book Studio'}) %>
             <br>
