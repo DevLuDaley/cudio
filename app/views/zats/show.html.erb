@@ -13,19 +13,23 @@ Engineer: <%= @zat.engineer.name %>
 <br>
 Studio: <%= @zat.studio.name %>
 <br>
+Location: <%= @zat.studio.location %>
+<br>
 Artist: <%= @zat.artist.name %>
 <br>
 Recording Session Complete? <%= @zat.status %>
 <br>
 <%= DateTime.parse(@zat.appointment_date.to_s).strftime("%I:%M %p") %>
+<br>
+</div>
+
+<div>
+</body>
+
+<button><%= link_to "Edit", edit_zat_path(@zat), :class => 'btn btn-default' %></button>
+<button><%= link_to "Delete", zat_path(@zat), 
+                        method: :delete, 
+                        data: {confirm: 'Are you sure you want to delete this session?'} , :class => 'btn btn-default'%>
+</button>
 
 </div>
-<br>
-
-<!-- Rec SESSION UPDATE FORM -->
-    <body>
-        <%= render 'edit_partial', form: @zat %>
-        <br>
-        <!-- Last -->
-<!-- Testing code -->
-<!-- End page content -->
