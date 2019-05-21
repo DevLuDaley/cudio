@@ -10,7 +10,7 @@
     <%= select("zat", "studio_id", @studios.collect {|p| [ p.name, p.id] }, {prompt: 'Book Studio'}) %>
     <br>
     <br>
-    <label>Appointment Date:</label><br>
+    <label>Session Date:</label><br>
     <%= select("zat", "appointment_date", @zats.collect {|p| [ p.appointment_date, p.id] }, {prompt: 'Select Date and Time'}) %>
 
     <br>
@@ -25,7 +25,7 @@
     <br>
 <input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date"
     value="2019-05-21T07:00"></p>
-Appointment Date : <%= p.text_field :appointment_date %><br />
+Session Date : <%= p.text_field :appointment_date %><br />
     <%= p.submit %>
     <% end %>
     </h4>
