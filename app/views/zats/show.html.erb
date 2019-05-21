@@ -4,15 +4,16 @@
 <!-- RECORDING SESSION INFO -->
 <div>
 <h2> Scheduled Recording Session </h2>
+
+Session ID: <%= @zat.id %>
+<br>
+Session Date: <%= @zat.appointment_date.time.to_formatted_s(:rfc822)  %>
+<br>
 Engineer: <%= @zat.engineer.name %>
 <br>
 Studio: <%= @zat.studio.name %>
 <br>
 Artist: <%= @zat.artist.name %>
-<br>
-Recording Session: <%= @zat.appointment_date.time.to_formatted_s(:rfc822)  %>
-<br>
-Recording Session ID: <%= @zat.id %>
 <br>
 Recording Session Complete? <%= @zat.status %>
 <br>
