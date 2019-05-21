@@ -87,28 +87,23 @@ Recording Session Complete? <%= @zat.status %>
 <%= link_to 'Delete Appointment', [@zat],
                   method: :delete, class: "button is-danger", data: { confirm: 'Are you sure you want to delete this recording session?' } %>
 
-<h1><%= link_to @zat.appointment_date.time.to_formatted_s(:rfc822), zats_path(@zat) %></h1>
-<h1><%= link_to @zat.engineer.name, zat_path(@zat) %></h1>
-
+                  <p>
+<%= link_to @zat.appointment_date.time.to_formatted_s(:rfc822), zats_path(@zat) %>
+<%= link_to @zat.engineer.name, zat_path(@zat) %>
 <%= link_to 'Recording Sessions', zats_path %>
-
+</p>
 
 <% end %>
 </div>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
+<p>
 <table>
     <tr>
         <td><%= @zat.engineer.name %></td>
         <td><%= @zat.engineer.name %></td>
     </tr>
 </table>
-
+</p>
 
 
 
