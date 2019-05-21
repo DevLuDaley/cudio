@@ -41,44 +41,20 @@
     </header>
 
     <body>
-<%= render 'form', form: @zat %>
-<br>
-</div>
-<h2>Recording Sessions</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Engineer</th>
-            <th>Artist</th>
-            <th>Studio</th>
-            <th>Recording Session Date</th>
-            <th colspan="3"></th>
-        </tr>
-    </thead>
-
-    <% @zats.each do |c| %>
-    <tbody>
-        <tr>
-            <td><a href="/engineers/@engineer_id page/:id"><%= c.engineer.name.capitalize %></a></td>
-            <td><a href="/artists/:artist_id"><%= c.artist.name.capitalize %></a></td>
-            <td><a href="/studios/@studios_path"><%= c.studio.name.capitalize %></a></td>
-            <td><a href="/zats/:id/edit"><%= c.appointment_date.time.to_formatted_s(:rfc822) %></a></td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
+<%= render 'edit', form: @zat %>
 
 <!-- Last -->
+
 
 <%= link_to 'Show', @zat %> |
 <%= link_to 'Recording Sessions', zats_path %>
 
-
-
-
 <!-- End page content -->
-</div>
 
+
+
+
+</div>
 <!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-32">
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
