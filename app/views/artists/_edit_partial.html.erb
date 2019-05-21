@@ -1,0 +1,27 @@
+
+
+<!-- EDIT FORM -->
+<%= form_for [@artist] do |p| %>
+
+<h2>View Recording Artists</h2>
+<h5>
+
+    <label>Recording Artist:</label><br>
+    <br>
+    <br>
+<input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date"
+    value="2019-05-21T07:00">
+    <%= p.submit %>
+    <% end %>
+
+    </p>
+
+    </h4>
+    <!-- END OF EDIT FORM -->
+
+
+<%= link_to 'Delete Appointment', [@artist],
+                  method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'Show', @artist %> |
+<%= link_to 'Recording Sessions', zats_path %>
