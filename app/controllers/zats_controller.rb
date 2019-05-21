@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class ZatsController < ApplicationController
+
+
+  
   def index
     @zats = Zat.all
     @engineers = Engineer.all
@@ -99,6 +102,7 @@ class ZatsController < ApplicationController
   def destroy
     Zat.find(params[:id]).destroy
     redirect_to action: 'index'
+    #redirect_to zat_path
   end
 
   def show_studios
