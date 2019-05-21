@@ -11,8 +11,10 @@
   </head>
   
   <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"> -->
+  <!-- <nav class="navbar navbar-default"> -->
+    
   <body>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <a class="navbar-brand" href="#">Session Scheduler</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
     aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,13 +48,20 @@
     </form>
   </div>
 </nav>
-    <%= yield %>
-    <!-- LINK TO CREATE NEW SESSION FORM -->
+<div class= "container"> 
+
+  <%= yield %>
+</div>
+
+<!-- <div class="container">
+
+<!-- LINK TO CREATE NEW SESSION FORM -->
     <a href="http://localhost:3000/zats/new">New Session |</a>
 <!-- TESTING Link_to functionality -->
 <!-- LINK TO CURRENT SESSION FORM -->
         <%= link_to 'Session', @zat %> |
 <!-- LINK TO ALL SESSIONS -->
         <%= link_to 'Recording Sessions', zats_path %>
-  </body>
+</div>
+      </body>
 </html>
