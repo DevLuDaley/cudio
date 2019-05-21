@@ -1,44 +1,3 @@
-<!DOCTYPE html>
-<html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-    body {
-        font-family: "Times New Roman", Georgia, Serif;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: "Playfair Display";
-        letter-spacing: 5px;
-    }
-</style>
-
-<body>
-
-    <!-- Navbar (sit on top) -->
-    <div class="w3-top">
-        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-            <a href="#home" class="w3-bar-item w3-button">zat app</a>
-            <!-- Right-sided navbar links. Hide them on small screens -->
-            <div class="w3-right w3-hide-small">
-                <a href="#about" class="w3-bar-item w3-button">Studios</a>
-                <a href="#menu" class="w3-bar-item w3-button">Artists</a>
-                <a href="#contact" class="w3-bar-item w3-button">Engineers</a>
-            </div>
-        </div>
-    </div>
-<!-- Header -->
-
-<h1 class="w3-xxlarge">Recording Session</h1>
-</div>
-</header>
 
 <body>
 
@@ -59,100 +18,13 @@ Recording Session Complete? <%= @zat.status %>
 <br>
 <%= DateTime.parse(@zat.appointment_date.to_s).strftime("%I:%M %p") %>
 
-
 </div>
 <br>
 
 <!-- Rec SESSION UPDATE FORM -->
-<div>
-    <h2> Update </h2>
-<%= form_for @zat , url: {action: "update"} do |f| %>
-<%= f.label 'Recording Session Date' %><br>
-<%= f.text_field :appointment_date %><br>
-
-
-<%= f.label 'Recording Session Location' %><br>
-<%= f.text_field :studio_id %><br>
-
-<%= f.label 'Recording Session Engineer' %><br>
-<%= f.text_field :engineer_id %><br>
-
-
-<%= f.label 'Recording Session Artist' %><br>
-<%= f.text_field :artist_id %><br>
-
-<%= f.submit "Update" %>
-
-<%= f.label 'Delete Appointment' %>
-<%= link_to 'Delete Appointment', [@zat],
-                  method: :delete, class: "button is-danger", data: { confirm: 'Are you sure you want to delete this recording session?' } %>
-
-                  <p>
-<%= link_to @zat.appointment_date.time.to_formatted_s(:rfc822), zats_path(@zat) %>
-<%= link_to @zat.engineer.name, zat_path(@zat) %>
-<%= link_to 'Recording Sessions', zats_path %>
-</p>
-
-<% end %>
-</div>
-<br>
-<p>
-<table>
-    <tr>
-        <td><%= @zat.engineer.name %></td>
-        <td><%= @zat.engineer.name %></td>
-    </tr>
-</table>
-</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- CATERING NOTES FOR FOOTER + Try to steal their template or date entry function -->
-<div>
-
-<form action="/action_page.php" target="_blank">
-    <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-    <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
-    <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date"
-            value="2017-11-16T20:00"></p>
-    <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required
-            name="Message"></p>
-    <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
-</form>
-</div>
-
-
-
+    <body>
+        <%= render 'edit_partial', form: @zat %>
+        <br>
+        <!-- Last -->
 <!-- Testing code -->
-
-
-<h1><%= link_to @zat.appointment_date.time.to_formatted_s(:rfc822), zat_path(@zat) %></h1>
-
-<%= link_to "All Zats", zats_path %>
-
-
-
-
-
 <!-- End page content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-center w3-light-grey w3-padding-32">
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
-            class="w3-hover-text-green">w3.css</a></p>
-</footer>
-
-</body>
-
-</html>
