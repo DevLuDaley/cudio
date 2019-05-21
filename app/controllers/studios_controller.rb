@@ -14,6 +14,9 @@ class StudiosController < ApplicationController
  end
 
 
+def new
+  @studio = Studio.new
+end
 
 
 
