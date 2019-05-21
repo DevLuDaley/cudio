@@ -3,7 +3,7 @@
 <!-- EDIT FORM -->
 <%= form_for [@engineer,@zat] do |p| %>
 
-<h2>Edit Recording Session</h2>
+<h2>Edit Session</h2>
 <h4>Use the dropdown menus below:</h4>
 <h5>
     <label>Studio Location:</label><br>
@@ -30,10 +30,3 @@ Appointment Date : <%= p.text_field :appointment_date %><br />
     <% end %>
     </h4>
     <!-- END OF EDIT FORM -->
-
-
-<%= link_to 'Delete Appointment', [@zat],
-                  method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
-
-<%= link_to 'Show', @zat %> |
-<%= link_to 'Recording Sessions', zats_path %>
