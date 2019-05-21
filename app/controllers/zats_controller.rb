@@ -18,7 +18,7 @@ class ZatsController < ApplicationController
   def new
     @zat = Zat.new
     # params.require(:zat).permit(:appointment_date, :studio_id, :engineer_id, :artist_id)
-     # if artist_id or not -- that
+    # if artist_id or not -- that
     # if nested_--tind artist build --what is associated
     index
   end
@@ -27,7 +27,7 @@ class ZatsController < ApplicationController
     # binding.pry
     @zat = Zat.new(zat_params)
     index
-    @zat = Zat.find(params[:id])
+    # @zat = Zat.find(params[:id])
     if @zat.save
       # raise params.inspect
       redirect_to action: 'index' # , notice: 'Recording Session created'
