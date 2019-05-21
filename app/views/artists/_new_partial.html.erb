@@ -1,0 +1,27 @@
+
+
+<!-- USED in views/zats/index -->
+
+
+
+
+
+
+
+
+<!-- EDIT FORM -->
+    <!-- DISPLAY Erros message for STUDIO CREATION -->
+        <input class="toggle-all" type="checkbox">
+        <%if @artist.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@artist.errors.count, "error") %>
+                prohibited this item from being saved:
+                <% @artist.errors.full_messages.each do |msg| %>
+            </h2>
+            <ul style="list-style: none;">
+                <li><div class="alert alert-danger"><%= msg %></div></li>
+                <% end %>
+            </ul>
+            <%  end %>
+    <!-- END OF EDIT FORM -->
