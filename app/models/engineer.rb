@@ -33,4 +33,7 @@ class Engineer < ApplicationRecord
       engineer.password = Devise.friendly_token[0, 20]
     end
 end
+
+
+ 
 end
