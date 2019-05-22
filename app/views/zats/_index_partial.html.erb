@@ -31,14 +31,14 @@
 <div class="well">
                 <tbody>
                     <tr>
-                        <td><a href="/engineers/@engineer_id page/:id"><%= c.id %></a></td>
-                        <td><a href="/engineers/@engineer_id page/:id"><%= c.engineer.name.capitalize %></a></td>
-                        <td><a href="/artists/:artist_id"><%= c.artist.name.capitalize %></a></td>
-                        <td><a href="/studios/@studios_path"><%= c.studio.name.capitalize %></a></td>
-                        <td><a href="/studios/@studios_path"><%= c.studio.location.capitalize %></a></td>
-                        <td><a href="/zats/"><%= c.appointment_date.time.to_formatted_s(:rfc822) %></a></td>
-                        <td><a href="/studios/@studios_path"><%= c.status %></a></td>
-                        <td><a href="/zats/@engineer_id"><%= link_to "Delete", c, method: :delete, data: { confirm: 'Are you sure you want to delete this recording session?' } %></a></td>
+                        <td><%= link_to c.id, zat_path(c)%></td>
+                        <td><%= link_to c.engineer.name.capitalize, engineer_path(c.engineer) %></a></td>
+                        <td><%= link_to c.artist.name, artist_path(c.artist)%></td>
+                        <td><%= link_to c.studio.name.capitalize, studio_path(c.studio)%></td>
+                        <td><%= link_to c.studio.location.capitalize, studio_path(c.studio)%></td>
+                        <td><%= link_to c.appointment_date.time.to_formatted_s(:rfc822), zat_path(c)%></td>
+                        <td><%= c.status %></td>
+                        <td><%= link_to "Delete", c, method: :delete, data: { confirm: 'Are you sure you want to delete this recording session?' } %></td>
 
                     </tr>
 
