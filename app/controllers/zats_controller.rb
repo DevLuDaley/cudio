@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class ZatsController < ApplicationController
+http_basic_authenticate_with name: "lu", password: "password", except: [:index, :show]
 
 
-  
   def index
     @zats = Zat.all
     @engineers = Engineer.all
