@@ -5,12 +5,32 @@ http_basic_authenticate_with name: "lu", password: "password", except: [:index, 
 
 
   def index
-    @zats = Zat.all
     @engineers = Engineer.all
     @studios = Studio.all
     @artists = Artist.all
+    if params[:artist_id]
+      @zats = Artist.find(params[:artist_id]).zats
+    elsif params[:engineer_id]
+      @zats = Engineer.find(params[:engineer_id]).zats
+    elsif params[:studio_id]
+      @zats = Studio.find(params[:studio_id]).zats
+    else
+      @zats = Zat.all
    #    redirect_to action: 'index'
  end
+ end
+
+=begin
+#zats#index action to account for whether the engineer/user is trying to 
+access the index of all zats/recording_sessions (Zat.all) or 
+just the index of all zats/recording_sessions 
+by a certain artist (Artist.find(params[:artist_id]).zats). 
+The conditional hinges on 
+whether there's an :artist_id key in the params hash — in other words, 
+whether the user navigated to /artists/:id/zats or simply /zats. 
+=end
+
+
 
   def show
     index
