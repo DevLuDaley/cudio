@@ -6,6 +6,9 @@
     <!-- DISPLAY Zat.ALL -->
     <section class="main">
     
+        <%= link_to 'logout', destroy_engineer_session_path, method: :delete %>
+
+
         <% if @zats.blank? %>
         <h2>There are currently no recording sessions scheduled.</h2>
         <% else %>
@@ -37,6 +40,7 @@
                         <td><%= link_to c.studio.name.capitalize, studio_path(c.studio)%></td>
                         <td><%= link_to c.studio.location.capitalize, studio_path(c.studio)%></td>
                         <td><%= link_to c.appointment_date.time.to_formatted_s(:rfc822), zat_path(c)%></td>
+                        
                         <td><%= c.status %></td>
                         <td><%= link_to "Delete", c, method: :delete, data: { confirm: 'Are you sure you want to delete this recording session?' } %></td>
 
