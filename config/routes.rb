@@ -1,18 +1,28 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :zats, :artists, :studios
-  resources :artists do
-    resources :zats # , only: :create
-  end
+
 
   devise_for :engineers, controllers: { omniauth_callbacks: 'engineers/omniauth_callbacks', registrations: 'registrations' }
+  devise_scope :engineer do
+    get 'login', to: 'devise/sessions#new'
+  end
+  
+  devise_scope :engineer do
+    get 'signup', to: 'devise/registrations#new'
+    
+  end
+  
   resources :engineers #do
-    #root 'engineer#index' 
+    root 'zats#index' 
+    get '/logout' => 'application#destroy'
   #  match '/engineers',   to: 'engineers#index',   via: 'get'
   #end
   #devise_for :engineers, :controllers => { :registrations => 'engineers' }
 
+  resources :engineers do
+    resources :zats # , only: :create
+  end
   #resources :engineers
  #   get 'engineers', to: 'engineers#index', as: 'index'
 
@@ -29,4 +39,14 @@ Rails.application.routes.draw do
   # resources :engineers do
   #   resources :zats
   #  end
+
+
+    resources :zats, :artists, :studios
+  resources :artists do
+    resources :zats # , only: :create
+  end
+
+  resources :studios do
+    resources :zats # , only: :create
+  end
 end
