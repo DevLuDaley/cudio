@@ -4,11 +4,13 @@ class Zat < ApplicationRecord
   belongs_to :artist
   belongs_to :studio
 
+#scope :by_status, -> status  { where(status: status) if status.present? }
+#scope :recent, -> { order("zats.updated_at DESC") }
 
-STATUS = {
-        :incomplete => 0,
-        :complete => 1
-    }
+scope :appointment_date, -> { where(appointment_date: true)}
+#scope :recent, -> { order("zats.updated_at DESC") }
+# scope :appointment_date, -> { where(appointment_date: true) }
+# scope :recent, -> { order("zats.appointment_date DESC") }
 
 
 validates :engineer_id, presence: true, length: { minimum: 1 }
@@ -19,7 +21,10 @@ validates :studio_id, presence: true, length: { minimum: 1 }
 #validates :appointment_date, presence: true, length: { minimum: 1 }
 #validates :appointment_date, uniqueness: true
 
-
+STATUS = {
+        :incomplete => 0,
+        :complete => 1
+    }
     #use hash above to set up key 10:00 v3
     #clearly define meaning of #0 || #1 in context
     def complete?
@@ -44,7 +49,14 @@ validates :studio_id, presence: true, length: { minimum: 1 }
         #self.status == 0
     end
 
+def self.recent
+    order("zats.updated_at DESC")
+  end
 
+#def self.incomplete
+ #   where(complete: false)
+    
+#end
 
 
 end
