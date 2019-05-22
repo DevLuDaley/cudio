@@ -53,22 +53,22 @@ And to handle our new filtering routes, we'll need to make some changes in our a
  [x] at least two has_many :through relationships
 
  [x] Include a many-to-many relationship implemented with has_many :through associations. 
-    [] The join table must include a user-submittable attribute 
+    [x] The join table must include a user-submittable attribute 
           — that is to say, some attribute other than its foreign keys that can be submitted by the app's user
 
-[] Your models must include reasonable validations for the simple attributes. 
+[x] Your models must include reasonable validations for the simple attributes. 
 
-    [] You don't need to add every possible validation or duplicates, 
+    [x] You don't need to add every possible validation or duplicates, 
        such as presence and a minimum length, 
         [] but the models should defend against invalid data.
         
 []You must include at least one class level ActiveRecord scope method.
 
-    [] Your scope method must be chainable, 
-        [] use ActiveRecord Query methods within it (such as .where and .order) 
+    [] Your scope method must be chainable,
+        [] use ActiveRecord Query methods within it (such as .where and .order)
             rather than native ruby methods (such as #find_all or #sort).
 
-    [] Your application must provide 
+    [] Your application must provide
     [] standard user authentication
 [x]      [x] signup => http://127.0.0.1:3000/engineers/sign_up
          [x] login => http://127.0.0.1:3000/engineers/sign_in
@@ -80,10 +80,10 @@ And to handle our new filtering routes, we'll need to make some changes in our a
              [x] Github
 
 
-    []You must include and make use of a nested resource with the appropriate RESTful URLs.
+    [x]You must include and make use of a nested resource with the appropriate RESTful URLs.
 
       [] You must include a nested new route with form that relates to the parent resource
-      [] You must include a nested index or show route
+   [x]   [x] You must include a nested index or show route
 
 
     [] Your forms should correctly display validation errors. 

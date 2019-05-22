@@ -1,0 +1,881 @@
+Last login: Fri May 17 13:49:36 on ttys005
+[16:18:36] ~
+// ♥ pwd
+/Users/LHD
+[16:18:44] ~
+// ♥ cd Users/LHD/Development/code/Learn_Labs/ONLINE-web-ft-021119/weeks_9-12_rails/all_rails_projects/cudio
+-bash: cd: Users/LHD/Development/code/Learn_Labs/ONLINE-web-ft-021119/weeks_9-12_rails/all_rails_projects/cudio: No such file or directory
+[16:19:12] ~
+// ♥ cd /Users/LHD/Development/code/Learn_Labs/ONLINE-web-ft-021119/weeks_9-12_rails/all_rails_projects/cudio
+[16:19:38] (master) cudio
+// ♥ rake routes -g devise
+                      Prefix Verb   URI Pattern                        Controller#Action
+        new_engineer_session GET    /engineers/sign_in(.:format)       devise/sessions#new
+            engineer_session POST   /engineers/sign_in(.:format)       devise/sessions#create
+    destroy_engineer_session DELETE /engineers/sign_out(.:format)      devise/sessions#destroy
+       new_engineer_password GET    /engineers/password/new(.:format)  devise/passwords#new
+      edit_engineer_password GET    /engineers/password/edit(.:format) devise/passwords#edit
+           engineer_password PATCH  /engineers/password(.:format)      devise/passwords#update
+                             PUT    /engineers/password(.:format)      devise/passwords#update
+                             POST   /engineers/password(.:format)      devise/passwords#create
+cancel_engineer_registration GET    /engineers/cancel(.:format)        devise/registrations#cancel
+   new_engineer_registration GET    /engineers/sign_up(.:format)       devise/registrations#new
+  edit_engineer_registration GET    /engineers/edit(.:format)          devise/registrations#edit
+       engineer_registration PATCH  /engineers(.:format)               devise/registrations#update
+                             PUT    /engineers(.:format)               devise/registrations#update
+                             DELETE /engineers(.:format)               devise/registrations#destroy
+                             POST   /engineers(.:format)               devise/registrations#create
+[16:19:54] (master) cudio
+// ♥ rake routes
+                            Prefix Verb     URI Pattern                                                                              Controller#Action
+                           artists GET      /artists(.:format)                                                                       artists#index
+                                   POST     /artists(.:format)                                                                       artists#create
+                        new_artist GET      /artists/new(.:format)                                                                   artists#new
+                       edit_artist GET      /artists/:id/edit(.:format)                                                              artists#edit
+                            artist GET      /artists/:id(.:format)                                                                   artists#show
+                                   PATCH    /artists/:id(.:format)                                                                   artists#update
+                                   PUT      /artists/:id(.:format)                                                                   artists#update
+                                   DELETE   /artists/:id(.:format)                                                                   artists#destroy
+              new_engineer_session GET      /engineers/sign_in(.:format)                                                             devise/sessions#new
+                  engineer_session POST     /engineers/sign_in(.:format)                                                             devise/sessions#create
+          destroy_engineer_session DELETE   /engineers/sign_out(.:format)                                                            devise/sessions#destroy
+engineer_github_omniauth_authorize GET|POST /engineers/auth/github(.:format)                                                         engineers/omniauth_callbacks#passthru
+ engineer_github_omniauth_callback GET|POST /engineers/auth/github/callback(.:format)                                                engineers/omniauth_callbacks#github
+             new_engineer_password GET      /engineers/password/new(.:format)                                                        devise/passwords#new
+            edit_engineer_password GET      /engineers/password/edit(.:format)                                                       devise/passwords#edit
+                 engineer_password PATCH    /engineers/password(.:format)                                                            devise/passwords#update
+                                   PUT      /engineers/password(.:format)                                                            devise/passwords#update
+                                   POST     /engineers/password(.:format)                                                            devise/passwords#create
+      cancel_engineer_registration GET      /engineers/cancel(.:format)                                                              registrations#cancel
+         new_engineer_registration GET      /engineers/sign_up(.:format)                                                             registrations#new
+        edit_engineer_registration GET      /engineers/edit(.:format)                                                                registrations#edit
+             engineer_registration PATCH    /engineers(.:format)                                                                     registrations#update
+                                   PUT      /engineers(.:format)                                                                     registrations#update
+                                   DELETE   /engineers(.:format)                                                                     registrations#destroy
+                                   POST     /engineers(.:format)                                                                     registrations#create
+                rails_service_blob GET      /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+         rails_blob_representation GET      /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+                rails_disk_service GET      /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+         update_rails_disk_service PUT      /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+              rails_direct_uploads POST     /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
+[18:42:42] (routes) cudio
+// ♥ rake routes
+                            Prefix Verb     URI Pattern                                                                              Controller#Action
+              new_engineer_session GET      /engineers/sign_in(.:format)                                                             devise/sessions#new
+                  engineer_session POST     /engineers/sign_in(.:format)                                                             devise/sessions#create
+          destroy_engineer_session DELETE   /engineers/sign_out(.:format)                                                            devise/sessions#destroy
+engineer_github_omniauth_authorize GET|POST /engineers/auth/github(.:format)                                                         engineers/omniauth_callbacks#passthru
+ engineer_github_omniauth_callback GET|POST /engineers/auth/github/callback(.:format)                                                engineers/omniauth_callbacks#github
+             new_engineer_password GET      /engineers/password/new(.:format)                                                        devise/passwords#new
+            edit_engineer_password GET      /engineers/password/edit(.:format)                                                       devise/passwords#edit
+                 engineer_password PATCH    /engineers/password(.:format)                                                            devise/passwords#update
+                                   PUT      /engineers/password(.:format)                                                            devise/passwords#update
+                                   POST     /engineers/password(.:format)                                                            devise/passwords#create
+      cancel_engineer_registration GET      /engineers/cancel(.:format)                                                              registrations#cancel
+         new_engineer_registration GET      /engineers/sign_up(.:format)                                                             registrations#new
+        edit_engineer_registration GET      /engineers/edit(.:format)                                                                registrations#edit
+             engineer_registration PATCH    /engineers(.:format)                                                                     registrations#update
+                                   PUT      /engineers(.:format)                                                                     registrations#update
+                                   DELETE   /engineers(.:format)                                                                     registrations#destroy
+                                   POST     /engineers(.:format)                                                                     registrations#create
+                rails_service_blob GET      /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+         rails_blob_representation GET      /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+                rails_disk_service GET      /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+         update_rails_disk_service PUT      /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+              rails_direct_uploads POST     /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
+[18:42:53] (routes) cudio
+// ♥ rails c
+Running via Spring preloader in process 70702
+Loading development environment (Rails 5.2.3)
+2.6.1 :001 > studio = Studio.find(1)
+  Studio Load (0.2ms)  SELECT  "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+ => #<Studio id: 1, name: "Lu's Closet", location: "Harlem, New York", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54"> 
+2.6.1 :002 > a = _
+ => #<Studio id: 1, name: "Lu's Closet", location: "Harlem, New York", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54"> 
+2.6.1 :003 > a.zat
+Traceback (most recent call last):
+        1: from (irb):3
+NoMethodError (undefined method `zat' for #<Studio:0x00007fa8f28fee20>)
+Did you mean?  zats
+2.6.1 :004 > a.name
+ => "Lu's Closet" 
+2.6.1 :005 > Zat.all
+  Zat Load (0.2ms)  SELECT  "zats".* FROM "zats" LIMIT ?  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Zat id: 1, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 2, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 3, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 2, engineer_id: 2, artist_id: 2, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 4, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 2, engineer_id: 2, artist_id: 2, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 5, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 3, engineer_id: 3, artist_id: 3, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 6, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 3, engineer_id: 3, artist_id: 3, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 7, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 4, engineer_id: 4, artist_id: 4, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 8, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 4, engineer_id: 4, artist_id: 4, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 9, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 5, engineer_id: 5, artist_id: 5, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 10, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 5, engineer_id: 5, artist_id: 5, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">]> 
+2.6.1 :006 > Zat.all[0]
+  Zat Load (0.3ms)  SELECT "zats".* FROM "zats"
+ => #<Zat id: 1, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55"> 
+2.6.1 :007 > Zat.first
+  Zat Load (0.3ms)  SELECT  "zats".* FROM "zats" ORDER BY "zats"."id" ASC LIMIT ?  [["LIMIT", 1]]
+ => #<Zat id: 1, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55"> 
+2.6.1 :008 > z= _
+ => #<Zat id: 1, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55"> 
+2.6.1 :009 > z.name
+Traceback (most recent call last):
+        1: from (irb):9
+NoMethodError (undefined method `name' for #<Zat:0x00007fa8f3667990>)
+2.6.1 :010 > z.engineer.name
+  Engineer Load (0.2ms)  SELECT  "engineers".* FROM "engineers" WHERE "engineers"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+ => "lu" 
+2.6.1 :011 > z.studio.
+2.6.1 :012 >   
+2.6.1 :013 >   q
+  Studio Load (0.2ms)  SELECT  "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+Traceback (most recent call last):
+        1: from (irb):13
+NoMethodError (undefined method `q' for #<Studio:0x00007fa8f19b3420>)
+2.6.1 :014 > z.studio
+ => #<Studio id: 1, name: "Lu's Closet", location: "Harlem, New York", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54"> 
+2.6.1 :015 > z.studio.zat
+Traceback (most recent call last):
+        1: from (irb):15
+NoMethodError (undefined method `zat' for #<Studio:0x00007fa8f19b3420>)
+Did you mean?  zats
+2.6.1 :016 > z.studio
+ => #<Studio id: 1, name: "Lu's Closet", location: "Harlem, New York", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54"> 
+2.6.1 :017 > Studio.all
+  Studio Load (0.2ms)  SELECT  "studios".* FROM "studios" LIMIT ?  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Studio id: 1, name: "Lu's Closet", location: "Harlem, New York", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Studio id: 2, name: "Quad Studios", location: "Brooklyn, New York", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Studio id: 3, name: "The Max", location: "Harlem, New York", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Studio id: 4, name: "THe Boom Boom Room", location: "Harlem, New York", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Studio id: 5, name: "The Block", location: "Queens, New York", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Studio id: 6, name: "Hit Factory", location: "Staten Island, New York", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Studio id: 7, name: "Glass Cage of Emotion", location: "Bronx, New York", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Studio id: 8, name: "Beat Farm", location: "Harlem, New York", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Studio id: 9, name: "Grandma's Basement", location: "Harlem, New York", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">]> 
+2.6.1 :018 > Zat.all
+  Zat Load (0.2ms)  SELECT  "zats".* FROM "zats" LIMIT ?  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Zat id: 1, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 2, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 3, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 2, engineer_id: 2, artist_id: 2, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 4, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 2, engineer_id: 2, artist_id: 2, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 5, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 3, engineer_id: 3, artist_id: 3, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 6, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 3, engineer_id: 3, artist_id: 3, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 7, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 4, engineer_id: 4, artist_id: 4, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 8, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 4, engineer_id: 4, artist_id: 4, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 9, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 5, engineer_id: 5, artist_id: 5, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 10, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 5, engineer_id: 5, artist_id: 5, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">]> 
+2.6.1 :019 > z = Zat.first
+  Zat Load (10.0ms)  SELECT  "zats".* FROM "zats" ORDER BY "zats"."id" ASC LIMIT ?  [["LIMIT", 1]]
+ => #<Zat id: 1, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55"> 
+2.6.1 :020 > z.appointment_date
+ => Wed, 06 Mar 2019 00:00:00 UTC +00:00 
+2.6.1 :021 > a = _
+ => Wed, 06 Mar 2019 00:00:00 UTC +00:00 
+2.6.1 :022 > a.day
+ => 6 
+2.6.1 :023 > a.day.to_string
+Traceback (most recent call last):
+        1: from (irb):23
+NoMethodError (undefined method `to_string' for 6:Integer)
+Did you mean?  to_int
+2.6.1 :024 > a.day.to_s
+ => "6" 
+2.6.1 :025 > a.day
+ => 6 
+2.6.1 :026 > a.motnh
+Traceback (most recent call last):
+        1: from (irb):26
+NoMethodError (undefined method `motnh' for Wed, 06 Mar 2019 00:00:00 UTC +00:00:Time)
+Did you mean?  month
+               mon
+2.6.1 :027 > a.month
+ => 3 
+2.6.1 :028 > a.time
+ => 2019-03-06 00:00:00 UTC 
+2.6.1 :029 > a.hour
+ => 0 
+2.6.1 :030 > a.minute
+Traceback (most recent call last):
+        1: from (irb):30
+NoMethodError (undefined method `minute' for Wed, 06 Mar 2019 00:00:00 UTC +00:00:Time)
+2.6.1 :031 > a.min
+ => 0 
+2.6.1 :032 > [a.min, a.hour]
+ => [0, 0] 
+2.6.1 :033 > [a.hour, a.min]
+ => [0, 0] 
+2.6.1 :034 > [a.hour: a.min]
+Traceback (most recent call last):
+SyntaxError ((irb):34: syntax error, unexpected ':', expecting ']')
+[a.hour: a.min]
+       ^
+(irb):34: syntax error, unexpected ']', expecting end-of-input
+[a.hour: a.min]
+              ^
+2.6.1 :035 > [a.hour : a.min]
+Traceback (most recent call last):
+SyntaxError ((irb):35: syntax error, unexpected ':', expecting ']')
+...se _; rescue _.class; [a.hour : a.min]
+...                              ^
+(irb):35: syntax error, unexpected ']', expecting end
+...escue _.class; [a.hour : a.min]
+...                              ^
+2.6.1 :036 > [#{a.hour} : a.min]
+2.6.1 :037 >     ["#{a.hour}" : a.min]
+2.6.1 :038?>   
+2.6.1 :039?>   s
+2.6.1 :040?>   end
+Traceback (most recent call last):
+SyntaxError ((irb):37: syntax error, unexpected ':', expecting ']')
+["#{a.hour}" : a.min]
+             ^
+(irb):37: syntax error, unexpected ']', expecting end
+["#{a.hour}" : a.min]
+                    ^
+(irb):41: syntax error, unexpected end, expecting end-of-input
+; end
+  ^~~
+2.6.1 :041 > ["#{a.hour} : #{a.min}"]
+ => ["0 : 0"] 
+2.6.1 :042 > ["#{a.hour}:#{a.min}"]
+ => ["0:0"] 
+2.6.1 :043 > 
+2.6.1 :044 > 
+2.6.1 :045 > 
+2.6.1 :046 > end
+Traceback (most recent call last):
+SyntaxError ((irb):46: syntax error, unexpected end)
+2.6.1 :047 > 
+2.6.1 :048 > end
+Traceback (most recent call last):
+SyntaxError ((irb):49: syntax error, unexpected end, expecting end-of-input)
+; end
+  ^~~
+2.6.1 :049 >  a
+ => Wed, 06 Mar 2019 00:00:00 UTC +00:00 
+2.6.1 :050 > z.first
+Traceback (most recent call last):
+        1: from (irb):50
+NoMethodError (undefined method `first' for #<Zat:0x00007fa8f23b8510>)
+2.6.1 :051 > z
+ => #<Zat id: 1, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55"> 
+2.6.1 :052 > 
+2.6.1 :053 > end
+Traceback (most recent call last):
+SyntaxError ((irb):53: syntax error, unexpected end)
+2.6.1 :054 > a.time.to_formatted_s(:long) 
+ => "March 06, 2019 00:00" 
+2.6.1 :055 > a.time.to_formatted_s(:long) ^C
+2.6.1 :055 > 
+2.6.1 :056 > end
+Traceback (most recent call last):
+SyntaxError ((irb):56: syntax error, unexpected end)
+2.6.1 :057 > Zat.all[5].update(appointment_date: 2019-06-03 09:30:00 UTC)
+Traceback (most recent call last):
+SyntaxError ((irb):57: Invalid octal digit)
+...appointment_date: 2019-06-03 09:30:00 UTC)
+...                             ^~
+(irb):57: syntax error, unexpected tINTEGER, expecting ')'
+...appointment_date: 2019-06-03 09:30:00 UTC)
+...                             ^~
+2.6.1 :058 > Zat.all[5].update(appointment_date: "2019-06-03 09:30:00 UTC")
+  Zat Load (2.6ms)  SELECT "zats".* FROM "zats"
+   (17.4ms)  begin transaction
+  Engineer Load (5.5ms)  SELECT  "engineers".* FROM "engineers" WHERE "engineers"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  Artist Load (0.2ms)  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  Studio Load (0.1ms)  SELECT  "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  Zat Update (0.6ms)  UPDATE "zats" SET "appointment_date" = ?, "updated_at" = ? WHERE "zats"."id" = ?  [["appointment_date", "2019-06-03 09:30:00"], ["updated_at", "2019-05-18 16:47:59.107539"], ["id", 6]]
+   (1.8ms)  commit transaction
+ => true 
+2.6.1 :059 > Zat.all[5].appointment_date
+  Zat Load (1.1ms)  SELECT "zats".* FROM "zats"
+ => Mon, 03 Jun 2019 09:30:00 UTC +00:00 
+2.6.1 :060 > Zat.all[5].appointment_date
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+ => Mon, 03 Jun 2019 09:30:00 UTC +00:00 
+2.6.1 :061 > Zat.all[5].appointment_date
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+ => Mon, 03 Jun 2019 09:30:00 UTC +00:00 
+2.6.1 :062 > Zat.all[6].update(appointment_date: "2019-11-03 11:30:00 UTC")
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+   (0.1ms)  begin transaction
+  Engineer Load (0.2ms)  SELECT  "engineers".* FROM "engineers" WHERE "engineers"."id" = ? LIMIT ?  [["id", 4], ["LIMIT", 1]]
+  Artist Load (0.2ms)  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?  [["id", 4], ["LIMIT", 1]]
+  Studio Load (0.1ms)  SELECT  "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?  [["id", 4], ["LIMIT", 1]]
+  Zat Update (2.2ms)  UPDATE "zats" SET "appointment_date" = ?, "updated_at" = ? WHERE "zats"."id" = ?  [["appointment_date", "2019-11-03 11:30:00"], ["updated_at", "2019-05-18 17:00:39.230160"], ["id", 7]]
+   (1.4ms)  commit transaction
+ => true 
+2.6.1 :063 > Engineer.all[6].name
+  Engineer Load (0.4ms)  SELECT "engineers".* FROM "engineers"
+ => "gilly" 
+2.6.1 :064 > Engineer.all[5].name
+  Engineer Load (0.2ms)  SELECT "engineers".* FROM "engineers"
+ => "rick ruben" 
+2.6.1 :065 > Engineer.all[4].name
+  Engineer Load (1.5ms)  SELECT "engineers".* FROM "engineers"
+ => "timbaland" 
+2.6.1 :066 > Engineer.all[3].name
+  Engineer Load (0.4ms)  SELECT "engineers".* FROM "engineers"
+ => "dr. dre" 
+2.6.1 :067 > Engineer.all[3].update(name: "Dr. Dre")
+  Engineer Load (0.4ms)  SELECT "engineers".* FROM "engineers"
+   (1.1ms)  begin transaction
+  Engineer Update (4.7ms)  UPDATE "engineers" SET "name" = ?, "updated_at" = ? WHERE "engineers"."id" = ?  [["name", "Dr. Dre"], ["updated_at", "2019-05-18 17:07:00.453043"], ["id", 4]]
+   (1.0ms)  commit transaction
+ => true 
+2.6.1 :068 > Zat.all[4]
+  Zat Load (1.7ms)  SELECT "zats".* FROM "zats"
+ => #<Zat id: 5, appointment_date: "2019-07-03 00:00:00", status: false, studio_id: 3, engineer_id: 3, artist_id: 3, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 16:59:28"> 
+2.6.1 :069 > Zat.all[4].appointment_date
+  Zat Load (0.3ms)  SELECT "zats".* FROM "zats"
+ => Wed, 03 Jul 2019 00:00:00 UTC +00:00 
+2.6.1 :070 > Zat.all[4].engineer.name
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+  Engineer Load (0.3ms)  SELECT  "engineers".* FROM "engineers" WHERE "engineers"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
+ => "stush" 
+2.6.1 :071 > Zat.all[4].update(appointment_date: "2019-06-05 10:30:00 UTC")
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+   (0.1ms)  begin transaction
+  Engineer Load (0.2ms)  SELECT  "engineers".* FROM "engineers" WHERE "engineers"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  Artist Load (0.2ms)  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  Studio Load (1.1ms)  SELECT  "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  Zat Update (0.4ms)  UPDATE "zats" SET "appointment_date" = ?, "updated_at" = ? WHERE "zats"."id" = ?  [["appointment_date", "2019-06-05 10:30:00"], ["updated_at", "2019-05-18 17:09:16.768359"], ["id", 5]]
+   (0.9ms)  commit transaction
+ => true 
+2.6.1 :072 > Zat.all[4].incomplete?
+  Zat Load (0.4ms)  SELECT "zats".* FROM "zats"
+Traceback (most recent call last):
+        1: from (irb):72
+NoMethodError (undefined method `incomplete?' for #<Zat:0x00007fa8f68615e0>)
+2.6.1 :073 > Zat.all[4]
+  Zat Load (2.9ms)  SELECT "zats".* FROM "zats"
+ => #<Zat id: 5, appointment_date: "2019-06-05 10:30:00", status: false, studio_id: 3, engineer_id: 3, artist_id: 3, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 17:09:16"> 
+2.6.1 :074 > Zat.all[4].status
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+ => false 
+2.6.1 :075 > ^C
+2.6.1 :075 > exit
+[13:44:50] (routes) cudio
+// ♥ rails c
+Running via Spring preloader in process 82319
+Loading development environment (Rails 5.2.3)
+2.6.1 :001 > Zat.all[4].status
+Traceback (most recent call last):
+        1: from (irb):1
+SyntaxError (/Users/LHD/Development/code/Learn_Labs/ONLINE-web-ft-021119/weeks_9-12_rails/all_rails_projects/cudio/app/models/zat.rb:17: syntax error, unexpected end, expecting ']')
+    end
+    ^~~
+/Users/LHD/Development/code/Learn_Labs/ONLINE-web-ft-021119/weeks_9-12_rails/all_rails_projects/cudio/app/models/zat.rb:39: syntax error, unexpected end-of-input, expecting end
+2.6.1 :002 > Zat.all
+Traceback (most recent call last):
+        2: from (irb):2
+        1: from (irb):2:in `rescue in irb_binding'
+SyntaxError (/Users/LHD/Development/code/Learn_Labs/ONLINE-web-ft-021119/weeks_9-12_rails/all_rails_projects/cudio/app/models/zat.rb:17: syntax error, unexpected end, expecting ']')
+    end
+    ^~~
+/Users/LHD/Development/code/Learn_Labs/ONLINE-web-ft-021119/weeks_9-12_rails/all_rails_projects/cudio/app/models/zat.rb:39: syntax error, unexpected end-of-input, expecting end
+2.6.1 :003 > Engineer.all[4].name
+  Engineer Load (1.4ms)  SELECT "engineers".* FROM "engineers"
+ => "timbaland" 
+2.6.1 :004 > Zat.all
+Traceback (most recent call last):
+        1: from (irb):4
+SyntaxError (/Users/LHD/Development/code/Learn_Labs/ONLINE-web-ft-021119/weeks_9-12_rails/all_rails_projects/cudio/app/models/zat.rb:17: syntax error, unexpected end, expecting ']')
+    end
+    ^~~
+/Users/LHD/Development/code/Learn_Labs/ONLINE-web-ft-021119/weeks_9-12_rails/all_rails_projects/cudio/app/models/zat.rb:39: syntax error, unexpected end-of-input, expecting end
+2.6.1 :005 > Engineer.all
+  Engineer Load (0.3ms)  SELECT  "engineers".* FROM "engineers" LIMIT ?  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Engineer id: 1, email: "lu@lu.com", name: "lu", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54", provider: nil, uid: nil>, #<Engineer id: 2, email: "young@guru.com", name: "young guru", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55", provider: nil, uid: nil>, #<Engineer id: 3, email: "stush@stush.com", name: "stush", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55", provider: nil, uid: nil>, #<Engineer id: 4, email: "dre@dre.com", name: "dr. dre", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 17:07:00", provider: nil, uid: nil>, #<Engineer id: 5, email: "timbo@timbo.com", name: "timbaland", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55", provider: nil, uid: nil>, #<Engineer id: 6, email: "rick@rick.com", name: "rick ruben", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55", provider: nil, uid: nil>, #<Engineer id: 7, email: "gilly@gilly.com", name: "gilly", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55", provider: nil, uid: nil>, #<Engineer id: 8, email: "teddy@teddy.com", name: "teddy riley", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55", provider: nil, uid: nil>]> 
+2.6.1 :006 > Engineer.all
+  Engineer Load (0.2ms)  SELECT  "engineers".* FROM "engineers" LIMIT ?  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Engineer id: 1, email: "lu@lu.com", name: "lu", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54", provider: nil, uid: nil>, #<Engineer id: 2, email: "young@guru.com", name: "young guru", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55", provider: nil, uid: nil>, #<Engineer id: 3, email: "stush@stush.com", name: "stush", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55", provider: nil, uid: nil>, #<Engineer id: 4, email: "dre@dre.com", name: "dr. dre", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 17:07:00", provider: nil, uid: nil>, #<Engineer id: 5, email: "timbo@timbo.com", name: "timbaland", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55", provider: nil, uid: nil>, #<Engineer id: 6, email: "rick@rick.com", name: "rick ruben", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55", provider: nil, uid: nil>, #<Engineer id: 7, email: "gilly@gilly.com", name: "gilly", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55", provider: nil, uid: nil>, #<Engineer id: 8, email: "teddy@teddy.com", name: "teddy riley", created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55", provider: nil, uid: nil>]> 
+2.6.1 :007 > exit
+[13:46:00] (routes) cudio
+// ♥ rails c
+Running via Spring preloader in process 82381
+Loading development environment (Rails 5.2.3)
+2.6.1 :001 > Zat.all
+  Zat Load (1.2ms)  SELECT  "zats".* FROM "zats" LIMIT ?  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Zat id: 1, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 2, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 3, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 2, engineer_id: 2, artist_id: 2, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 4, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 2, engineer_id: 2, artist_id: 2, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 5, appointment_date: "2019-06-05 10:30:00", status: false, studio_id: 3, engineer_id: 3, artist_id: 3, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 17:09:16">, #<Zat id: 6, appointment_date: "2019-06-03 09:30:00", status: false, studio_id: 3, engineer_id: 3, artist_id: 3, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 16:47:59">, #<Zat id: 7, appointment_date: "2019-11-03 11:30:00", status: false, studio_id: 4, engineer_id: 4, artist_id: 4, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 17:00:39">, #<Zat id: 8, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 4, engineer_id: 4, artist_id: 4, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 9, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 5, engineer_id: 5, artist_id: 5, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 10, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 5, engineer_id: 5, artist_id: 5, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">]> 
+2.6.1 :002 > Zat.all[4].status
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+ => false 
+2.6.1 :003 > ^C
+2.6.1 :003 > exit
+[13:47:19] (routes) cudio
+// ♥ rails c
+Running via Spring preloader in process 82417
+Loading development environment (Rails 5.2.3)
+2.6.1 :001 > Zat.all[4].status
+Traceback (most recent call last):
+        1: from (irb):1
+SyntaxError (/Users/LHD/Development/code/Learn_Labs/ONLINE-web-ft-021119/weeks_9-12_rails/all_rails_projects/cudio/app/models/zat.rb:17: syntax error, unexpected end, expecting ']')
+    end
+    ^~~
+/Users/LHD/Development/code/Learn_Labs/ONLINE-web-ft-021119/weeks_9-12_rails/all_rails_projects/cudio/app/models/zat.rb:39: syntax error, unexpected end-of-input, expecting end
+2.6.1 :002 > Zat.all[4].status
+  Zat Load (1.3ms)  SELECT "zats".* FROM "zats"
+ => false 
+2.6.1 :003 > Zat.all[4].incomplete?
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+Traceback (most recent call last):
+        2: from (irb):3
+        1: from app/models/zat.rb:20:in `incomplete?'
+NameError (uninitialized constant Zat::STATUS)
+2.6.1 :004 > Zat.all[4].incomplete?
+  Zat Load (0.1ms)  SELECT "zats".* FROM "zats"
+Traceback (most recent call last):
+        3: from (irb):4
+        2: from (irb):4:in `rescue in irb_binding'
+        1: from app/models/zat.rb:20:in `incomplete?'
+NameError (uninitialized constant Zat::STATUS)
+2.6.1 :005 > Zat.all[4].incomplete?
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+Traceback (most recent call last):
+        3: from (irb):5
+        2: from (irb):5:in `rescue in irb_binding'
+        1: from app/models/zat.rb:20:in `incomplete?'
+NameError (uninitialized constant Zat::STATUS)
+2.6.1 :006 > Zat.all[4]
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+ => #<Zat id: 5, appointment_date: "2019-06-05 10:30:00", status: false, studio_id: 3, engineer_id: 3, artist_id: 3, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 17:09:16"> 
+2.6.1 :007 > Zat.all[4].status
+  Zat Load (0.1ms)  SELECT "zats".* FROM "zats"
+ => false 
+2.6.1 :008 > Zat.all[4].incomplete?
+  Zat Load (0.1ms)  SELECT "zats".* FROM "zats"
+Traceback (most recent call last):
+        2: from (irb):8
+        1: from app/models/zat.rb:20:in `incomplete?'
+NameError (uninitialized constant Zat::STATUS)
+2.6.1 :009 > exit
+[13:51:09] (routes) cudio
+// ♥ rails c
+Running via Spring preloader in process 82542
+Loading development environment (Rails 5.2.3)
+2.6.1 :001 > Zat.all[4].incomplete?
+  Zat Load (1.0ms)  SELECT "zats".* FROM "zats"
+ => true 
+2.6.1 :002 > Zat.all[7].incomplete?
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+ => true 
+2.6.1 :003 > Zat.all[7]
+  Zat Load (0.3ms)  SELECT "zats".* FROM "zats"
+ => #<Zat id: 8, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 4, engineer_id: 4, artist_id: 4, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55"> 
+2.6.1 :004 > Zat.all[4].complete!
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+Traceback (most recent call last):
+        2: from (irb):4
+        1: from app/models/zat.rb:25:in `complete!'
+NameError (uninitialized constant Zat::STATUS)
+2.6.1 :005 > exit
+[13:58:02] (routes) cudio
+// ♥ rails c
+Running via Spring preloader in process 82687
+Loading development environment (Rails 5.2.3)
+2.6.1 :001 > Zat.all[4].complete!
+  Zat Load (0.6ms)  SELECT "zats".* FROM "zats"
+   (0.1ms)  begin transaction
+  Engineer Load (0.2ms)  SELECT  "engineers".* FROM "engineers" WHERE "engineers"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  Artist Load (0.2ms)  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  Studio Load (0.1ms)  SELECT  "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  Zat Update (0.7ms)  UPDATE "zats" SET "status" = ?, "updated_at" = ? WHERE "zats"."id" = ?  [["status", 1], ["updated_at", "2019-05-18 17:58:07.487969"], ["id", 5]]
+   (1.0ms)  commit transaction
+ => true 
+2.6.1 :002 > exit
+[13:59:11] (routes) cudio
+// ♥ rails c
+Running via Spring preloader in process 82733
+Loading development environment (Rails 5.2.3)
+2.6.1 :001 > Zat.all[7].incomplete?
+  Zat Load (3.5ms)  SELECT "zats".* FROM "zats"
+ => false 
+2.6.1 :002 > Zat.all[4].complete!
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+   (0.2ms)  begin transaction
+  Engineer Load (0.2ms)  SELECT  "engineers".* FROM "engineers" WHERE "engineers"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  Artist Load (0.2ms)  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
+  Studio Load (0.2ms)  SELECT  "studios".* FROM "studios" WHERE "studios"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
+   (0.1ms)  commit transaction
+ => true 
+2.6.1 :003 > Zat.all[4].complete?
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+ => false 
+2.6.1 :004 > @zats.each do |c|
+2.6.1 :005 >     if c.incomplete?
+2.6.1 :006?>     c.engineer.name
+2.6.1 :007?>     else
+2.6.1 :008?>     puts "        Status: session complete"
+2.6.1 :009?>     end
+2.6.1 :010?>   end
+Traceback (most recent call last):
+        1: from (irb):4
+NoMethodError (undefined method `each' for nil:NilClass)
+2.6.1 :011 > @zats
+ => nil 
+2.6.1 :012 > zat.all.each do |c|
+2.6.1 :013 >     if c.incomplete?
+2.6.1 :014?>     c.engineer.name
+2.6.1 :015?>     else
+2.6.1 :016?>     puts "        Status: session complete"
+2.6.1 :017?>     end
+2.6.1 :018?>   end
+Traceback (most recent call last):
+        1: from (irb):12
+NameError (undefined local variable or method `zat' for main:Object)
+2.6.1 :019 > zat.all
+Traceback (most recent call last):
+        2: from (irb):19
+        1: from (irb):19:in `rescue in irb_binding'
+NameError (undefined local variable or method `zat' for main:Object)
+2.6.1 :020 > Zat.ll
+Traceback (most recent call last):
+        2: from (irb):20
+        1: from (irb):20:in `rescue in irb_binding'
+NoMethodError (undefined method `ll' for #<Class:0x00007fe4ac494178>)
+2.6.1 :021 > Zat.all
+  Zat Load (0.2ms)  SELECT  "zats".* FROM "zats" LIMIT ?  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Zat id: 1, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 2, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 3, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 2, engineer_id: 2, artist_id: 2, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 4, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 2, engineer_id: 2, artist_id: 2, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 5, appointment_date: "2019-06-05 10:30:00", status: true, studio_id: 3, engineer_id: 3, artist_id: 3, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 17:58:07">, #<Zat id: 6, appointment_date: "2019-06-03 09:30:00", status: false, studio_id: 3, engineer_id: 3, artist_id: 3, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 16:47:59">, #<Zat id: 7, appointment_date: "2019-11-03 11:30:00", status: false, studio_id: 4, engineer_id: 4, artist_id: 4, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 17:00:39">, #<Zat id: 8, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 4, engineer_id: 4, artist_id: 4, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 9, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 5, engineer_id: 5, artist_id: 5, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 10, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 5, engineer_id: 5, artist_id: 5, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">]> 
+2.6.1 :022 > Zat.all.each do |c|
+2.6.1 :023 >     if c.incomplete?
+2.6.1 :024?>     c.engineer.name
+2.6.1 :025?>     else
+2.6.1 :026?>     puts "        Status: session complete"
+2.6.1 :027?>     end
+2.6.1 :028?>   end
+  Zat Load (0.2ms)  SELECT "zats".* FROM "zats"
+        Status: session complete
+        Status: session complete
+        Status: session complete
+        Status: session complete
+        Status: session complete
+        Status: session complete
+        Status: session complete
+        Status: session complete
+        Status: session complete
+        Status: session complete
+ => [#<Zat id: 1, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 2, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 3, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 2, engineer_id: 2, artist_id: 2, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 4, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 2, engineer_id: 2, artist_id: 2, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 5, appointment_date: "2019-06-05 10:30:00", status: true, studio_id: 3, engineer_id: 3, artist_id: 3, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 17:58:07">, #<Zat id: 6, appointment_date: "2019-06-03 09:30:00", status: false, studio_id: 3, engineer_id: 3, artist_id: 3, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 16:47:59">, #<Zat id: 7, appointment_date: "2019-11-03 11:30:00", status: false, studio_id: 4, engineer_id: 4, artist_id: 4, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-18 17:00:39">, #<Zat id: 8, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 4, engineer_id: 4, artist_id: 4, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 9, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 5, engineer_id: 5, artist_id: 5, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">, #<Zat id: 10, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 5, engineer_id: 5, artist_id: 5, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55">] 
+2.6.1 :029 > zat.appointment_date
+Traceback (most recent call last):
+        1: from (irb):29
+NameError (undefined local variable or method `zat' for main:Object)
+2.6.1 :030 > l = Zats.find(2)
+Traceback (most recent call last):
+        2: from (irb):30
+        1: from (irb):30:in `rescue in irb_binding'
+NameError (uninitialized constant Zats)
+2.6.1 :031 > l = Zats.find(id:2)
+Traceback (most recent call last):
+        2: from (irb):31
+        1: from (irb):31:in `rescue in irb_binding'
+NameError (uninitialized constant Zats)
+2.6.1 :032 > l = Zats.find(:id)
+Traceback (most recent call last):
+        2: from (irb):32
+        1: from (irb):32:in `rescue in irb_binding'
+NameError (uninitialized constant Zats)
+2.6.1 :033 > l = Zat.find(:id)
+  Zat Load (0.7ms)  SELECT  "zats".* FROM "zats" WHERE "zats"."id" = ? LIMIT ?  [["id", nil], ["LIMIT", 1]]
+Traceback (most recent call last):
+        2: from (irb):33
+        1: from (irb):33:in `rescue in irb_binding'
+ActiveRecord::RecordNotFound (Couldn't find Zat with 'id'=id)
+2.6.1 :034 > l = Zat.find(1)
+  Zat Load (1.3ms)  SELECT  "zats".* FROM "zats" WHERE "zats"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
+ => #<Zat id: 1, appointment_date: "2019-03-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55"> 
+2.6.1 :035 > l = Zat.find(2)
+  Zat Load (0.2ms)  SELECT  "zats".* FROM "zats" WHERE "zats"."id" = ? LIMIT ?  [["id", 2], ["LIMIT", 1]]
+ => #<Zat id: 2, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55"> 
+2.6.1 :036 > l
+ => #<Zat id: 2, appointment_date: "2019-04-06 00:00:00", status: false, studio_id: 1, engineer_id: 1, artist_id: 1, created_at: "2019-05-17 20:36:55", updated_at: "2019-05-17 20:36:55"> 
+2.6.1 :037 > l.appointment_date
+ => Sat, 06 Apr 2019 00:00:00 UTC +00:00 
+2.6.1 :038 > 
+  [Restored May 21, 2019 at 7:22:48 AM]
+Last login: Sat May 18 10:50:07 on ttys007
+Restored session: Tue May 21 07:22:43 EDT 2019
+[07:22:49] (destroy) cudio
+// ♥ 
+[07:58:16] (destroy) cudio
+// ♥ rails c
+Running via Spring preloader in process 30127
+Loading development environment (Rails 5.2.3)
+2.6.1 :001 > Artist.all
+  Artist Load (1.1ms)  SELECT  "artists".* FROM "artists" LIMIT ?  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Artist id: 1, name: "Coach", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Artist id: 2, name: "Biggie", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Artist id: 3, name: "Nas", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Artist id: 4, name: "Coldplay", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Artist id: 5, name: "Prince", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Artist id: 6, name: "Eve", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">, #<Artist id: 7, name: "Gwen", created_at: "2019-05-17 20:36:54", updated_at: "2019-05-17 20:36:54">]> 
+2.6.1 :002 > exit
+[05:24:40] (nav2) cudio
+// ♥ rake time:zones:all
+
+* UTC -12:00 *
+International Date Line West
+
+* UTC -11:00 *
+American Samoa
+Midway Island
+
+* UTC -10:00 *
+Hawaii
+
+* UTC -09:00 *
+Alaska
+
+* UTC -08:00 *
+Pacific Time (US & Canada)
+Tijuana
+
+* UTC -07:00 *
+Arizona
+Chihuahua
+Mazatlan
+Mountain Time (US & Canada)
+
+* UTC -06:00 *
+Central America
+Central Time (US & Canada)
+Guadalajara
+Mexico City
+Monterrey
+Saskatchewan
+
+* UTC -05:00 *
+Bogota
+Eastern Time (US & Canada)
+Indiana (East)
+Lima
+Quito
+
+* UTC -04:00 *
+Atlantic Time (Canada)
+Caracas
+Georgetown
+La Paz
+Puerto Rico
+Santiago
+
+* UTC -03:30 *
+Newfoundland
+
+* UTC -03:00 *
+Brasilia
+Buenos Aires
+Greenland
+Montevideo
+
+* UTC -02:00 *
+Mid-Atlantic
+
+* UTC -01:00 *
+Azores
+Cape Verde Is.
+
+* UTC +00:00 *
+Casablanca
+Dublin
+Edinburgh
+Lisbon
+London
+Monrovia
+UTC
+
+* UTC +01:00 *
+Amsterdam
+Belgrade
+Berlin
+Bern
+Bratislava
+Brussels
+Budapest
+Copenhagen
+Ljubljana
+Madrid
+Paris
+Prague
+Rome
+Sarajevo
+Skopje
+Stockholm
+Vienna
+Warsaw
+West Central Africa
+Zagreb
+Zurich
+
+* UTC +02:00 *
+Athens
+Bucharest
+Cairo
+Harare
+Helsinki
+Jerusalem
+Kaliningrad
+Kyiv
+Pretoria
+Riga
+Sofia
+Tallinn
+Vilnius
+
+* UTC +03:00 *
+Baghdad
+Istanbul
+Kuwait
+Minsk
+Moscow
+Nairobi
+Riyadh
+St. Petersburg
+
+* UTC +03:30 *
+Tehran
+
+* UTC +04:00 *
+Abu Dhabi
+Baku
+Muscat
+Samara
+Tbilisi
+Volgograd
+Yerevan
+
+* UTC +04:30 *
+Kabul
+
+* UTC +05:00 *
+Ekaterinburg
+Islamabad
+Karachi
+Tashkent
+
+* UTC +05:30 *
+Chennai
+Kolkata
+Mumbai
+New Delhi
+Sri Jayawardenepura
+
+* UTC +05:45 *
+Kathmandu
+
+* UTC +06:00 *
+Almaty
+Astana
+Dhaka
+Urumqi
+
+* UTC +06:30 *
+Rangoon
+
+* UTC +07:00 *
+Bangkok
+Hanoi
+Jakarta
+Krasnoyarsk
+Novosibirsk
+
+* UTC +08:00 *
+Beijing
+Chongqing
+Hong Kong
+Irkutsk
+Kuala Lumpur
+Perth
+Singapore
+Taipei
+Ulaanbaatar
+
+* UTC +09:00 *
+Osaka
+Sapporo
+Seoul
+Tokyo
+Yakutsk
+
+* UTC +09:30 *
+Adelaide
+Darwin
+
+* UTC +10:00 *
+Brisbane
+Canberra
+Guam
+Hobart
+Melbourne
+Port Moresby
+Sydney
+Vladivostok
+
+* UTC +11:00 *
+Magadan
+New Caledonia
+Solomon Is.
+Srednekolymsk
+
+* UTC +12:00 *
+Auckland
+Fiji
+Kamchatka
+Marshall Is.
+Wellington
+
+* UTC +12:45 *
+Chatham Is.
+
+* UTC +13:00 *
+Nuku'alofa
+Samoa
+Tokelau Is.
+
+[05:24:45] (nav2) cudio
+// ♥ irb
+2.6.1 :001 > greeting = "Hello, the time is #{Time.now}"
+ => "Hello, the time is 2019-05-22 10:12:29 -0400" 
+2.6.1 :002 > 
+2.6.1 :003 > greeting = "Hello, the time is #{Time.now}"
+ => "Hello, the time is 2019-05-22 10:12:39 -0400" 
+2.6.1 :004 > greeting = "Hello, the time is #{Time.now}"
+ => "Hello, the time is 2019-05-22 10:12:48 -0400" 
+2.6.1 :005 > greeting = lamda {"Hello, the time is #{Time.now}"}
+Traceback (most recent call last):
+        4: from /Users/LHD/.rvm/rubies/ruby-2.6.1/bin/irb:23:in `<main>'
+        3: from /Users/LHD/.rvm/rubies/ruby-2.6.1/bin/irb:23:in `load'
+        2: from /Users/LHD/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/irb-1.0.0/exe/irb:11:in `<top (required)>'
+        1: from (irb):5
+NoMethodError (undefined method `lamda' for main:Object)
+Did you mean?  lambda
+2.6.1 :006 > greeting = lambda {"Hello, the time is #{Time.now}"}
+ => #<Proc:0x00007fb1a59d6be8@(irb):6 (lambda)> 
+2.6.1 :007 > greeting.class
+ => Proc 
+2.6.1 :008 > greeting.call
+ => "Hello, the time is 2019-05-22 10:14:37 -0400" 
+2.6.1 :009 > greeting.call
+ => "Hello, the time is 2019-05-22 10:14:43 -0400" 
+2.6.1 :010 > greeting.call
+ => "Hello, the time is 2019-05-22 10:14:49 -0400" 
+2.6.1 :011 > greeting.call
+ => "Hello, the time is 2019-05-22 10:14:58 -0400" 
+2.6.1 :012 > greeting.call
+ => "Hello, the time is 2019-05-22 10:15:00 -0400" 
+2.6.1 :013 > greeting = -> { "Hello, the time is #{Time.now} }
+2.6.1 :014"> greeting.call
+2.6.1 :015"> 
+2.6.1 :016"> greeting.call
+2.6.1 :017"> 
+2.6.1 :018"> 
+2.6.1 :019"> end
+2.6.1 :020"> greeting = lambda {"Hello, the time is #{Time.now}"}
+2.6.1 :021?>   
+2.6.1 :022?>   
+2.6.1 :023?>   
+2.6.1 :024?>   
+2.6.1 :025?>   greeting = lambda {"Hello, the time is #{Time.now}"}
+2.6.1 :026?>   
+2.6.1 :027?>   
+2.6.1 :028?>   
+2.6.1 :029?>   
+2.6.1 :030?>   exit
+2.6.1 :031?>   ^C
+2.6.1 :031 > ^C
+2.6.1 :031 > ^C
+2.6.1 :031 > ^C
+2.6.1 :031 > ^C
+2.6.1 :031 > ^C
+2.6.1 :031 > ^C
+2.6.1 :031 > ^C
+2.6.1 :031 > ^C
+2.6.1 :031 > exiy
+Traceback (most recent call last):
+        4: from /Users/LHD/.rvm/rubies/ruby-2.6.1/bin/irb:23:in `<main>'
+        3: from /Users/LHD/.rvm/rubies/ruby-2.6.1/bin/irb:23:in `load'
+        2: from /Users/LHD/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/irb-1.0.0/exe/irb:11:in `<top (required)>'
+        1: from (irb):31
+NameError (undefined local variable or method `exiy' for main:Object)
+Did you mean?  exit
+2.6.1 :032 > exiy
+Traceback (most recent call last):
+        5: from /Users/LHD/.rvm/rubies/ruby-2.6.1/bin/irb:23:in `<main>'
+        4: from /Users/LHD/.rvm/rubies/ruby-2.6.1/bin/irb:23:in `load'
+        3: from /Users/LHD/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/irb-1.0.0/exe/irb:11:in `<top (required)>'
+        2: from (irb):32
+        1: from (irb):32:in `rescue in irb_binding'
+NameError (undefined local variable or method `exiy' for main:Object)
+2.6.1 :033 > exit
+[10:16:59] (nav2) cudio
+// ♥ 
