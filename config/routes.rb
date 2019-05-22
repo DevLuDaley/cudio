@@ -7,6 +7,14 @@ Rails.application.routes.draw do
   end
 
   devise_for :engineers, controllers: { omniauth_callbacks: 'engineers/omniauth_callbacks', registrations: 'registrations' }
+  resources :engineers #do
+    #root 'engineer#index' 
+  #  match '/engineers',   to: 'engineers#index',   via: 'get'
+  #end
+  #devise_for :engineers, :controllers => { :registrations => 'engineers' }
+
+  #resources :engineers
+ #   get 'engineers', to: 'engineers#index', as: 'index'
 
   #  get 'zats/:id', to: 'zats#show', as: 'session'
   # get 'zats/index'
