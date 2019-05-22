@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  
+
   <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"> -->
   <!-- <nav class="navbar navbar-default"> -->
     
@@ -49,6 +49,10 @@
   </div>
 </nav>
 <div class= "container"> 
+
+
+    <!-- devise + alex said that I should add flash message to this file-->
+    <%= render 'layouts/alerts' %>
 
   <%= yield %>
 </div>
