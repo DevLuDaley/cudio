@@ -1,0 +1,12 @@
+
+
+<!-- USED in views/zats/index -->
+
+<!-- EDIT FORM -->
+    <!-- DISPLAY Zat.ALL -->
+    
+<% @engineers = Engineer.all %>
+<% @engineers.each do |engineer| %>
+<%= engineer.name %><br />
+<% end %>
+    <!-- END OF EDIT FORM -->
