@@ -30,7 +30,7 @@
                     </tr>
                 </thead>
     
-                <% @zats.each do |c| %>
+                <% Zat.incomplete.order('appointment_date ASC').each do |c| %>
 <div class="well">
                 <tbody>
                     <tr>

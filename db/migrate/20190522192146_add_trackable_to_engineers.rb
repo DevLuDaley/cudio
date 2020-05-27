@@ -7,7 +7,7 @@ class AddTrackableToEngineers < ActiveRecord::Migration[5.2]
     add_column :engineers, :last_sign_in_ip, :string
 
 
-#copied rom the engineers file.
+#copied from the engineers file.
 
   end
 end

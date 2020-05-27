@@ -7,7 +7,7 @@ class Zat < ApplicationRecord
 #scope :by_status, -> status  { where(status: status) if status.present? }
 #scope :recent, -> { order("zats.updated_at DESC") }
 
-scope :appointment_date, -> { where(appointment_date: true)}
+scope :incomplete, -> { where(status: false)}
 #scope :recent, -> { order("zats.updated_at DESC") }
 # scope :appointment_date, -> { where(appointment_date: true) }
 # scope :recent, -> { order("zats.appointment_date DESC") }
@@ -27,6 +27,9 @@ STATUS = {
     }
     #use hash above to set up key 10:00 v3
     #clearly define meaning of #0 || #1 in context
+
+
+    
     def complete?
         self.status == STATUS[:complete]    
         #self.status == 1

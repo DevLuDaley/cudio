@@ -2,27 +2,34 @@
 
 Rails.application.routes.draw do
 
+  resources :zats, :artists, :studios
 
-  devise_for :engineers, controllers: { omniauth_callbacks: 'engineers/omniauth_callbacks', registrations: 'registrations' }
-  devise_scope :engineer do
-    get 'login', to: 'devise/sessions#new'
-  end
-  
-  devise_scope :engineer do
-    get 'signup', to: 'devise/registrations#new'
-    
-  end
-  
-  resources :engineers #do
-    root 'zats#index' 
-    get '/logout' => 'application#destroy'
+  devise_for :engineers, controllers: { omniauth_callbacks: 'engineers/omniauth_callbacks', registrations: 'registrations', sessions: 'engineers/sessions', sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
+#devise_for :engineers, controllers: { sessions: 'engineers/sessions' }
+ # resources :engineers #do
+    #root 'zats#index' 
+    get '/engineers/sign_out' => 'engineers/sessions#destroy'
+#    get '/signout' => 'sessions#destroy'
   #  match '/engineers',   to: 'engineers#index',   via: 'get'
   #end
   #devise_for :engineers, :controllers => { :registrations => 'engineers' }
 
-  resources :engineers do
+  #resources :engineers do
+ #   resources :zats # , only: :create
+  #end
+  resources :artists do
     resources :zats # , only: :create
   end
+  resources :studios do
+    resources :zats # , only: :create
+  end
+
+
+  
+end
+
+
+
   #resources :engineers
  #   get 'engineers', to: 'engineers#index', as: 'index'
 
@@ -41,12 +48,4 @@ Rails.application.routes.draw do
   #  end
 
 
-    resources :zats, :artists, :studios
-  resources :artists do
-    resources :zats # , only: :create
-  end
-
-  resources :studios do
-    resources :zats # , only: :create
-  end
-end
+   
